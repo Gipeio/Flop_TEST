@@ -1,0 +1,15 @@
+.rooms-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rooms {
+    margin: 0 10px;
+}
+
+.pref{
+    display: flex;
+    flex-direction: row;
+}
+

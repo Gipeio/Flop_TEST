@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% csrf_token %}
+{% load i18n %}
+
+{% block title %} EDT {% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/room_preference.css' %}" />
+<html>
+  <body>
+    <div id="main-container">
+      <h1>{% trans "Favorite room" %}</h1>
+      <p>{% trans "(Ranking your favorite rooms, which may contain ties.)" %}</p>
+      
+      <div id="rooms-table" class="rooms-container">
+        {% for roomtype, pref in pref_tmpl.items %}
+        <div class="rooms" id="{{roomtype.id}}">
+          <strong>{{roomtype.name}}</strong>
+          {% for room, value in pref.items %}
+          <div class="pref" id="{{room.id}}">
+            <form>
+              <select name="pref">
+                {% for rank in pref.items %}
+                <option value={{forloop.counter}}
+                        {% if value == forloop.counter %}
+                        selected="selected"
+                        {% endif %}
+                        >{{forloop.counter}}</option>
+                {% endfor %}
+                {% comment %}
+                TODO exclude a room
+                <option value=0
+                        {% if value == 0 %}
+                        selected="selected"
+                        {% endif %}
+                        >Exclus</option>
+                {% endcomment %}
+              </select>
+            </form>
+            {{room.name}}
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+      <input type="submit" value="Valider" onclick="exporter()" />
+      <p id="ack"></p>
+    </div>
+    <script>
+      var csrftoken = '{{ csrf_token }}';
+      if(!jQuery.fn.jquery.startsWith("1")){
+          function csrfSafeMethod(method) {
+              // these HTTP methods do not require CSRF protection
+              return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+          }
+          $.ajaxSetup({
+              beforeSend: function(xhr, settings) {
+                  if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                      xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                  }
+              }
+          });
+      }
+      var user = "{{user}}";
+      var init_pref = {{ pref_js | safe}};
+      var url_changes = "{% url 'base:room_pref_changes_per_tutor' department user %}";
+    </script>
+    <script type='text/javascript' src="{% static 'base/room_preference.js' %}"></script>
+  </body>
+</html>
+
+{% endblock %}
+

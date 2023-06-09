@@ -1,0 +1,144 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "flopeditor/base.html" %}
+{% load static %}
+
+{% block nav-classes-parameters %} active {% endblock %}
+
+{% block content-flopeditor %}
+<div class="container row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card container">
+            <h5 class="card-header">{{ title }}</h5>
+            <div class="card-body pb-0">
+                <div class="form-group row">
+                    {% block parameters_content %}
+                    <div class="col-sm-4  mt-3" style="border-right: solid 1px grey;">
+                        <div class="form-group">
+                            <p class="h6"><u><strong>Jours ouvrables</strong></u></p>
+                        </div>
+                        {% if day_choices.0.0 in days%}
+                        <div class="form-group">
+                            <label>Lundi</label>
+                        </div>
+                        {% endif %}
+                        {% if day_choices.1.0 in days%}
+                        <div class="form-group">
+                            <label>Mardi</label>
+                        </div>
+                        {% endif %}
+                        {% if day_choices.2.0 in days%}
+                        <div class="form-group">
+                            <label>Mercredi</label>
+                        </div>
+                        {% endif %}
+                        {% if  day_choices.3.0 in days%}
+                        <div class="form-group">
+                            <label>Jeudi</label>
+                        </div>
+                        {% endif %}
+                        {% if  day_choices.4.0 in days%}
+                        <div class="form-group">
+                            <label>Vendredi</label>
+                        </div>
+                        {% endif %}
+                        {% if  day_choices.5.0 in days%}
+                        <div class="form-group">
+                            <label>Samedi</label>
+                        </div>
+                        {% endif %}
+                        {% if day_choices.6.0 in days%}
+                        <div class="form-group">
+                            <label>Dimanche</label>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-8 mt-3">
+                        <div class="form-group row">
+                            <div class="col-sm-12 h6">
+                                <u><strong>Horaires de fonctionnement</strong></u>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label">Début des cours</label>
+                            <div class="col-auto col-form-label">
+                                {{ day_start_time }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label">Fin des cours</label>
+                            <div class="col-auto col-form-label">
+                                {{ day_finish_time }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label">Début de la pause
+                                déjeuner</label>
+                            <div class="col-auto col-form-label">
+                                {{ lunch_break_start_time }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label">Fin de la pause déjeuner</label>
+                            <div class="col-auto col-form-label">
+                                {{ lunch_break_finish_time }}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label">Durée par défaut d'un cours</label>
+                            <div class="col-auto col-form-label">
+                                {{ default_preference_duration }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="h6"><u><strong>Modes</strong></u></p>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label">Mode Visio</label>
+                            <div class="col-auto col-form-label">
+                                {{ visio_mode }}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-8 col-form-label">Mode Educ / Coop</label>
+                            <div class="col-auto col-form-label">
+                                {{ cosmo_mode }}
+                            </div>
+                        </div>
+                    </div>
+                    {% if has_department_perm %}
+                        <a type="button"
+                            href="{% url 'flopeditor:flopeditor-department-parameters-edit' department_abbrev=department.abbrev %}"
+                            class="btn btn-raised btn-info mx-auto mt-4">Modifier</a>
+
+                    {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

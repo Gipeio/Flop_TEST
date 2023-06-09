@@ -1,0 +1,1785 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-18 13:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FlOpEDT/settings/base.py:162
+msgid "French"
+msgstr "法语"
+
+#: FlOpEDT/settings/base.py:163
+msgid "English"
+msgstr "英语"
+
+#: FlOpEDT/settings/base.py:164
+msgid "Spanish"
+msgstr "西班牙语"
+
+#: FlOpEDT/settings/base.py:165
+msgid "Arabic"
+msgstr "阿拉伯语"
+
+#: FlOpEDT/settings/base.py:166
+msgid "Basque"
+msgstr "巴斯克语"
+
+#: FlOpEDT/settings/base.py:167
+msgid "Breton"
+msgstr "布列塔尼语"
+
+#: FlOpEDT/settings/base.py:168
+msgid "Catalan"
+msgstr "加泰罗尼亚语"
+
+#: FlOpEDT/settings/base.py:169
+msgid "Corsican"
+msgstr "科西嘉语"
+
+#: FlOpEDT/settings/base.py:170
+msgid "Danish"
+msgstr "丹麦语"
+
+#: FlOpEDT/settings/base.py:171
+msgid "German"
+msgstr "德语"
+
+#: FlOpEDT/settings/base.py:172
+msgid "Dutch"
+msgstr "荷兰语"
+
+#: FlOpEDT/settings/base.py:173
+msgid "Greek"
+msgstr "希腊语"
+
+#: FlOpEDT/settings/base.py:174
+msgid "Italian"
+msgstr "意大利语"
+
+#: FlOpEDT/settings/base.py:175
+msgid "Latin"
+msgstr "拉丁文"
+
+#: FlOpEDT/settings/base.py:176
+msgid "Norwegian"
+msgstr "挪威语"
+
+#: FlOpEDT/settings/base.py:177
+#, fuzzy
+#| msgid "English"
+msgid "Polish"
+msgstr "英语"
+
+#: FlOpEDT/settings/base.py:178
+msgid "Portuguese"
+msgstr "葡萄牙语"
+
+#: FlOpEDT/settings/base.py:179
+msgid "Swedish"
+msgstr "瑞典语"
+
+#: FlOpEDT/settings/base.py:180
+msgid "Chinese"
+msgstr "中文"
+
+#: FlOpEDT/settings/base.py:181
+msgid "Smurf"
+msgstr "蓝精灵语"
+
+#: TTapp/FlopConstraint.py:59
+msgid "Is active?"
+msgstr ""
+
+#: TTapp/RoomConstraints/RoomConstraint.py:109
+msgid "Limit simultaneous courses for rooms"
+msgstr ""
+
+#: TTapp/RoomConstraints/RoomConstraint.py:273
+msgid "Limited room choices"
+msgstr ""
+
+#: TTapp/RoomConstraints/RoomConstraint.py:335
+msgid "Consider tutors rooms sorts"
+msgstr ""
+
+#: TTapp/RoomConstraints/RoomConstraint.py:367
+msgid "Assign a room to the courses"
+msgstr ""
+
+#: TTapp/RoomConstraints/RoomConstraint.py:443
+msgid "Limit room moves for groups"
+msgstr ""
+
+#: TTapp/RoomConstraints/RoomConstraint.py:463
+msgid "Limit room moves for tutors"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:61
+msgid "No simultaneous courses for groups"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:76
+#: TTapp/TTConstraints/core_constraints.py:433
+#: TTapp/TTConstraints/slots_constraints.py:73
+#: TTapp/TTConstraints/slots_constraints.py:456
+msgid "OK"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:125
+#: TTapp/TTConstraints/core_constraints.py:143
+#: TTapp/TTConstraints/core_constraints.py:187
+#: TTapp/TTConstraints/core_constraints.py:203
+#: TTapp/TTConstraints/core_constraints.py:458
+#: TTapp/TTConstraints/core_constraints.py:521
+#: TTapp/TTConstraints/core_constraints.py:551
+#: TTapp/TTConstraints/slots_constraints.py:85
+#: TTapp/TTConstraints/slots_constraints.py:117
+#: TTapp/TTConstraints/slots_constraints.py:123
+#: TTapp/TTConstraints/slots_constraints.py:146
+#: TTapp/TTConstraints/slots_constraints.py:156
+#: TTapp/TTConstraints/slots_constraints.py:486
+#: TTapp/TTConstraints/slots_constraints.py:493
+#: TTapp/TTConstraints/slots_constraints.py:500
+#: TTapp/TTConstraints/slots_constraints.py:514
+#: TTapp/TTConstraints/slots_constraints.py:522
+#: TTapp/TTConstraints/slots_constraints.py:531
+msgid "KO"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:127
+#, python-format
+msgid ""
+"Group %(group_name)s has %(not_forbidden_duration)s available time but "
+"requires minimum %(min_course_time_needed)s."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:145
+#, python-format
+msgid ""
+"Group %(group_name)s has %(not_forbidden_duration)s available time but "
+"probably requires minimum %(min_course_time_needed)s."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:189
+#, python-format
+msgid ""
+"Group %(group_name)s has %(allowed_slots_nb)s slots available of "
+"%(duration)s minutes and requires %(nb_courses)s."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:205
+#, python-format
+msgid ""
+"Group %(group_name)s has a total of %(all_allowed_slots_nb)s slots available "
+"of minimum %(min_duration)s minutes and requires %(all_nb_courses)s."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:274
+msgid "No simultaneous courses for one group"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:288
+msgid "Schedule once all considered courses"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:327
+msgid "Schedule once every considered course"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:339
+msgid "Pre-assigned courses only"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:342
+#: TTapp/TTConstraints/core_constraints.py:410
+msgid "Each course is assigned to one tutor (max)"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:417
+msgid "Consider tutors' unvailabilities"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:452
+#, python-format
+msgid "Tutor %(tutor)s has %(available_duration)s minutes of available time."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:454
+#: TTapp/TTConstraints/core_constraints.py:516
+#, python-format
+msgid ""
+" He or she has to lecture %(classes_nb)s classes for an amount of "
+"%(duration)s minutes of courses."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:502
+#, python-format
+msgid "Tutor %(tutor)s has %(available_duration)s minutes of available time"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:505
+msgid " (considering that"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:507
+#, python-format
+msgid " %s is forbidden"
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:509
+#, python-format
+msgid " and %s is holiday)."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:513
+#, python-format
+msgid " %s is holiday)."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:544
+#, python-format
+msgid "Tutor %(tutor)s has %(slots_nb)s available slots of %(duration)s mins "
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:548
+#, python-format
+msgid "and %s courses that long to attend."
+msgstr ""
+
+#: TTapp/TTConstraints/core_constraints.py:595
+msgid "Consider tutors unavailability"
+msgstr ""
+
+#: TTapp/TTConstraints/cosmo_style_constraints.py:65
+msgid "Limit holes"
+msgstr ""
+
+#: TTapp/TTConstraints/cosmo_style_constraints.py:162
+msgid "Number of weeks"
+msgstr ""
+
+#: TTapp/TTConstraints/cosmo_style_constraints.py:165
+msgid "Limit time per weeks for tutors"
+msgstr ""
+
+#: TTapp/TTConstraints/cosmo_style_constraints.py:266
+msgid "Gather courses of considered modules"
+msgstr ""
+
+#: TTapp/TTConstraints/groups_constraints.py:112
+msgid "Minimize busy half-days for groups"
+msgstr ""
+
+#: TTapp/TTConstraints/groups_constraints.py:145
+msgid "Minimize groups half-days"
+msgstr ""
+
+#: TTapp/TTConstraints/groups_constraints.py:155
+msgid "Minimize undesired slots for groups"
+msgstr ""
+
+#: TTapp/TTConstraints/groups_constraints.py:216
+msgid "Minimize groups non-preferred slots"
+msgstr ""
+
+#: TTapp/TTConstraints/groups_constraints.py:228
+msgid "Respect groups min hours per day bounds"
+msgstr ""
+
+#: TTapp/TTConstraints/limit_time_constraints.py:51
+msgid "fhd_period"
+msgstr ""
+
+#: TTapp/TTConstraints/limit_time_constraints.py:121
+msgid "Limit groups busy time per period"
+msgstr ""
+
+#: TTapp/TTConstraints/limit_time_constraints.py:188
+msgid "Limit modules busy time per period"
+msgstr ""
+
+#: TTapp/TTConstraints/limit_time_constraints.py:268
+msgid "Limit tutors busy time per period"
+msgstr ""
+
+#: TTapp/TTConstraints/limit_time_constraints.py:335
+msgid "Limit course type time, regardless of tutor, module or group"
+msgstr ""
+
+#: TTapp/TTConstraints/modules_constraints.py:42
+msgid "Minimize used half-days for modules"
+msgstr ""
+
+#: TTapp/TTConstraints/no_course_constraints.py:45
+#, fuzzy
+#| msgid "Full"
+msgid "Full day"
+msgstr "满"
+
+#: TTapp/TTConstraints/no_course_constraints.py:45 base/timing.py:145
+msgid "AM"
+msgstr ""
+
+#: TTapp/TTConstraints/no_course_constraints.py:45 base/timing.py:145
+msgid "PM"
+msgstr ""
+
+#: TTapp/TTConstraints/no_course_constraints.py:46
+msgid "fampm_period"
+msgstr ""
+
+#: TTapp/TTConstraints/no_course_constraints.py:73
+msgid "No courses on declared days for groups"
+msgstr ""
+
+#: TTapp/TTConstraints/no_course_constraints.py:189
+msgid "No courses on declared days for tutors"
+msgstr ""
+
+#: TTapp/TTConstraints/orsay_constraints.py:66
+msgid "Lunch break for groups"
+msgstr ""
+
+#: TTapp/TTConstraints/orsay_constraints.py:173
+msgid "Lunch break for tutors"
+msgstr ""
+
+#: TTapp/TTConstraints/orsay_constraints.py:230
+#, python-brace-format
+msgid "Not able to eat in other departments on {day}-{week}"
+msgstr ""
+
+#: TTapp/TTConstraints/orsay_constraints.py:305
+msgid "A break around some type courses"
+msgstr ""
+
+#: TTapp/TTConstraints/simultaneity_constraints.py:43
+#: TTapp/TTConstraints/tutors_constraints.py:50
+#, fuzzy
+#| msgid "Tutors"
+msgid "tutors"
+msgstr "教师"
+
+#: TTapp/TTConstraints/simultaneity_constraints.py:45
+#, fuzzy
+#| msgid "Tutors"
+msgid "guide tutors"
+msgstr "教师"
+
+#: TTapp/TTConstraints/simultaneity_constraints.py:52
+msgid "Not alone for these course types"
+msgstr ""
+
+#: TTapp/TTConstraints/simultaneity_constraints.py:149
+msgid "Parallelize courses"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:86
+msgid "No partition created : maybe there is no courses or it's wrong the week"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:118
+msgid "Not enough common available time for courses "
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:147
+#, python-format
+msgid "Tutor %s has more than one to do at the same time"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:157
+#, python-format
+msgid "Group %s has more than one course to do at the same time"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:219
+msgid "Simultaneous courses"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:279
+msgid "Limited start time choices"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:336
+msgid "Avoid considered start times"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:440
+msgid "Consider dependecies"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:488
+#: TTapp/TTConstraints/slots_constraints.py:495
+#, python-format
+msgid ""
+"There is no available slots for the second course after the first one : %s"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:502
+#, python-format
+msgid "There is no available slots for the first or the second course : %s"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:516
+#, python-format
+msgid "There is no available successive slots for those courses: %s"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:524
+#, python-format
+msgid ""
+"There is no available slots for the second course after a %(day_gap)s day "
+"gap: %(dependency)s"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:533
+#, python-format
+msgid "One of the courses has no eligible tutor to lecture it: %s"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:603
+#, fuzzy
+#| msgid "Constraints"
+msgid "Consider pivots"
+msgstr "约束条件"
+
+#: TTapp/TTConstraints/slots_constraints.py:677
+msgid "Avoid using both times on same day"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:735 ics/templates/ics/index.html:66
+msgid "Tutors"
+msgstr "教师"
+
+#: TTapp/TTConstraints/slots_constraints.py:741
+msgid "Limit undesired slots per week"
+msgstr ""
+
+#: TTapp/TTConstraints/slots_constraints.py:795
+msgid "Limit simultaneous courses number"
+msgstr ""
+
+#: TTapp/TTConstraints/stabilization_constraints.py:56
+msgid "Stabilize tutors courses"
+msgstr ""
+
+#: TTapp/TTConstraints/stabilization_constraints.py:123
+msgid "Stabilize groups courses"
+msgstr ""
+
+#: TTapp/TTConstraints/stabilization_constraints.py:174
+#, fuzzy
+#| msgid "Stabilization ?"
+msgid "Stabilization through weeks"
+msgstr "稳定？"
+
+#: TTapp/TTConstraints/tutors_constraints.py:56
+msgid "Minimize busy half days for tutors"
+msgstr ""
+
+#: TTapp/TTConstraints/tutors_constraints.py:96
+msgid "Minimize undesired slots for tutors"
+msgstr ""
+
+#: TTapp/TTConstraints/tutors_constraints.py:139
+msgid "Minimize tutors busy days"
+msgstr ""
+
+#: TTapp/TTConstraints/tutors_constraints.py:205
+msgid "Respect max hours per days bounds"
+msgstr ""
+
+#: TTapp/TTConstraints/tutors_constraints.py:259
+msgid "Respect tutors min hours per day bounds"
+msgstr ""
+
+#: TTapp/TTConstraints/tutors_constraints.py:317
+msgid "Lower bound tutor busy days"
+msgstr ""
+
+#: TTapp/TTConstraints/visio_constraints.py:47
+msgid "No visio courses"
+msgstr ""
+
+#: TTapp/TTConstraints/visio_constraints.py:112
+msgid "Only visio courses"
+msgstr ""
+
+#: TTapp/TTConstraints/visio_constraints.py:179
+msgid "Limit simultaneous physical presence"
+msgstr ""
+
+#: TTapp/TTConstraints/visio_constraints.py:232
+msgid "Bound physical presence half days"
+msgstr ""
+
+#: TTapp/TTConstraints/visio_constraints.py:287
+msgid "Curfew"
+msgstr ""
+
+#: TTapp/TTModel.py:104
+#, python-brace-format
+msgid ""
+"\n"
+"Let's start weeks #{self.weeks}"
+msgstr ""
+
+#: TTapp/TTModel.py:114
+msgid "Rooms assignment :"
+msgstr ""
+
+#: TTapp/TTModel.py:125
+#, python-brace-format
+msgid "Will modify only courses of training programme(s) {train_prog}"
+msgstr ""
+
+#: TTapp/TTModel.py:156
+msgid "Relevant warnings :"
+msgstr ""
+
+#: TTapp/TTUtils.py:45
+msgid "Reload..."
+msgstr ""
+
+#: TTapp/TTUtils.py:49
+#, python-brace-format
+msgid "Saved in copy {result_work_copy}"
+msgstr ""
+
+#: TTapp/TTUtils.py:56
+#, fuzzy
+#| msgid "Reassign rooms"
+msgid "Impossible to assign rooms"
+msgstr "重新分配教室"
+
+#: TTapp/TTUtils.py:415
+#, python-format
+msgid "%s, "
+msgstr ""
+
+#: api/permissions.py:13
+msgid "All methods reserved for tutors"
+msgstr ""
+
+#: api/permissions.py:23
+msgid "POST, PUT, PATCH and DELETE methods reserved for tutors"
+msgstr ""
+
+#: api/permissions.py:33
+msgid "POST, PUT, PATCH and DELETE methods reserved for students"
+msgstr ""
+
+#: api/permissions.py:43
+msgid "POST, PUT, PATCH and DELETE methods reserved for admin"
+msgstr ""
+
+#: base/admin.py:608 base/admin.py:634 base/admin.py:647
+#, fuzzy
+#| msgid "Weeks"
+msgid "Week"
+msgstr "周"
+
+#: base/forms.py:33
+msgid "Your e-mail address :"
+msgstr "您的邮箱是："
+
+#: base/forms.py:36
+msgid "Recipient :"
+msgstr "收件人： "
+
+#: base/forms.py:38 ics/templates/ics/index.html:69
+msgid "Pseudo"
+msgstr "昵称"
+
+#: base/forms.py:40
+msgid "Subject of the e-mail :"
+msgstr "邮件主题: "
+
+#: base/forms.py:42
+msgid "100 characters max"
+msgstr "最多100个字符"
+
+#: base/forms.py:43
+msgid "Body of the message :"
+msgstr "邮件正文： "
+
+#: base/forms.py:50
+msgid "This person doesn't exist."
+msgstr "此人不存在"
+
+#: base/forms.py:58
+msgid "Ideally"
+msgstr "理想地"
+
+#: base/forms.py:64 base/templates/base/show-stype.html:133
+msgid "Maximum"
+msgstr "最大限度"
+
+#: base/models.py:138
+msgid "Basic group?"
+msgstr "基本组？"
+
+#: base/models.py:233
+msgid "Half day"
+msgstr "半天"
+
+#: base/models.py:257 notifications/models.py:41
+msgid "Week number"
+msgstr ""
+
+#: base/models.py:311
+msgid "Educative"
+msgstr ""
+
+#: base/models.py:312
+msgid "Coop. (workplace)"
+msgstr ""
+
+#: base/models.py:313
+msgid "Coop. (worker)"
+msgstr ""
+
+#: base/models.py:499 notifications/models.py:47
+msgid "Abbreviation"
+msgstr "缩写"
+
+#: base/models.py:543
+msgid "graded?"
+msgstr "评分的？"
+
+#: base/models.py:570
+msgid "Suspens?"
+msgstr "未解决的？"
+
+#: base/models.py:603
+msgid "Graded?"
+msgstr "评分的？"
+
+#: base/models.py:604
+msgid "Over time"
+msgstr ""
+
+#: base/models.py:984
+msgid "Successives?"
+msgstr "连续的？"
+
+#: base/models.py:985 base/models.py:996
+msgid "On different days"
+msgstr "在不同的日子"
+
+#: base/models.py:986
+msgid "Minimal day gap between courses"
+msgstr ""
+
+#: base/models.py:1014
+msgid "Full"
+msgstr "满"
+
+#: base/models.py:1016
+msgid "Full generation date"
+msgstr "完整的生成日期"
+
+#: base/models.py:1017
+msgid "Stabilized"
+msgstr "稳定的"
+
+#: base/models.py:1019
+msgid "Partial generation date"
+msgstr "部分的生成日期"
+
+#: base/templates/base/contact.html:34 base/templates/base/visio.html:38
+msgid "Send"
+msgstr "发送"
+
+#: base/templates/base/departments.html:15
+msgid "Please choose your department : "
+msgstr "请选择您所在的部门："
+
+#: base/templates/base/help.html:34
+msgid "Room modification"
+msgstr "教室的修改"
+
+#: base/templates/base/help.html:35
+msgid ""
+"Right click on the course in question, the available rooms appear. Click on "
+"+ to choose a room that is not available for this course. Don't forget to "
+"validate any changes."
+msgstr ""
+"右键单击有问题的课程，将显示可用的教室。单击+选择该课程未使用的教室。不要忘记"
+"保存所有更改。"
+
+#: base/templates/base/help.html:38
+msgid "Create an account"
+msgstr "创建一个帐户"
+
+#: base/templates/base/help.html:39
+msgid "Here"
+msgstr "这里"
+
+#: base/templates/base/help.html:42
+msgid "Modification of an account"
+msgstr "帐户修改"
+
+#: base/templates/base/help.html:43
+msgid "Click on his nickname (his initials) at the top right of the page."
+msgstr "单击页面右上角他的昵称（他的名字缩写）"
+
+#: base/templates/base/help.html:45
+msgid "Change password"
+msgstr "更改密码"
+
+#: base/templates/base/help.html:46 base/templates/base/help.html:49
+msgid "Click on"
+msgstr "点击"
+
+#: base/templates/base/help.html:46 base/templates/base/help.html:49
+msgid "this link"
+msgstr "此链接"
+
+#: base/templates/base/help.html:46
+msgid "to change your password."
+msgstr "来更改您的密码"
+
+#: base/templates/base/help.html:48
+msgid "Password reminder"
+msgstr "密码提醒"
+
+#: base/templates/base/help.html:49
+msgid "for a password reminder, or via 'Login' at the top of the page."
+msgstr "以提示密码，或通过页面顶部的'登录'"
+
+#: base/templates/base/help.html:51
+msgid "Direct link to a particular group"
+msgstr "直接链接到特定组"
+
+#: base/templates/base/help.html:52
+#, fuzzy
+#| msgid "Add \"?promo=INFO1&gp=1A\" at the end of the url, for example "
+msgid "Add \"?promo=...&gp=...\" at the end of the url, for example "
+msgstr "例如，在网址末尾添加 \"?promo=INFO1&gp=1A\"  "
+
+#: base/templates/base/help.html:53
+msgid "To know the name of your training programme and group, check the list "
+msgstr ""
+
+#: base/templates/base/help.html:53
+msgid "here"
+msgstr ""
+
+#: base/templates/base/help.html:56
+msgid "How availability entry work"
+msgstr "可用性输入的工作原理"
+
+#: base/templates/base/help.html:57
+msgid ""
+"When generating the schedule for a given week, if no availability is entered "
+"for that week, the typical week defines the availability."
+msgstr ""
+" 当生成给定一周的时间表时， 如果该周没有输入任何可用性，则典型的一周定义了可"
+"用性。"
+
+#: base/templates/base/help.html:59
+msgid "Some Tutorial Videos"
+msgstr "一些教程视频"
+
+#: base/templates/base/module_description.html:35
+msgid "Modification of the module description."
+msgstr "修改模块说明。"
+
+#: base/templates/base/module_description.html:41
+msgid "Modify"
+msgstr "修改"
+
+#: base/templates/base/notification.html:29
+msgid "I wish to be notified of changes for the"
+msgstr "我希望收到有关更改的通知在"
+
+#: base/templates/base/notification.html:32
+msgid "next weeks."
+msgstr "接下来的几周。"
+
+#: base/templates/base/notification.html:33
+msgid "(0 if no notification, 1 for the next 7 days, etc.)"
+msgstr "（如果没有通知，则为0，接下来的7天则为1，依此类推）"
+
+#: base/templates/base/notification.html:36 base/templates/base/themes.html:42
+msgid "Save"
+msgstr "保存"
+
+#: base/templates/base/room_preference.html:14
+msgid "Favorite room"
+msgstr "教室偏好"
+
+#: base/templates/base/room_preference.html:15
+msgid "(Ranking your favorite rooms, which may contain ties.)"
+msgstr "（对您最喜欢的教室中进行排名，其中可能包含联系。）"
+
+#: base/templates/base/show-decale.html:79
+msgid "When ?"
+msgstr "什么时候？"
+
+#: base/templates/base/show-decale.html:81
+msgid "Cancelled class"
+msgstr "已取消课程"
+
+#: base/templates/base/show-decale.html:82
+msgid "Pending classes"
+msgstr "待定课程"
+
+#: base/templates/base/show-decale.html:83
+msgid "Course scheduled on week"
+msgstr "一周安排的课程"
+
+#: base/templates/base/show-decale.html:89
+msgid "Why ?"
+msgstr "为什么？"
+
+#: base/templates/base/show-decale.html:90
+msgid "(Please fill in the date information)"
+msgstr "（请填写日期信息）"
+
+#: base/templates/base/show-decale.html:98
+msgid " Proposals"
+msgstr " 提议"
+
+#: base/templates/base/show-decale.html:104
+msgid " How ?"
+msgstr "如何 ？"
+
+#: base/templates/base/show-edt.html:49
+msgid "Check election"
+msgstr "检查选举"
+
+#: base/templates/base/show-edt.html:53
+msgid "Elect this copy"
+msgstr "选择此副本"
+
+#: base/templates/base/show-edt.html:57
+msgid "Duplicate this copy"
+msgstr "复制此副本"
+
+#: base/templates/base/show-edt.html:61
+msgid "Delete this copy"
+msgstr "删除此副本"
+
+#: base/templates/base/show-edt.html:65
+msgid "Delete all copies except the 0"
+msgstr "删除除0以外的所有副本"
+
+#: base/templates/base/show-edt.html:69
+msgid "Reassign rooms"
+msgstr "重新分配教室"
+
+#: base/templates/base/show-edt.html:73
+msgid "Duplicate (what can be) in other weeks"
+msgstr ""
+
+#: base/templates/base/show-stype.html:95
+msgid "Weeks"
+msgstr "周"
+
+#: base/templates/base/show-stype.html:96
+msgid "Set default week"
+msgstr "设置默认周"
+
+#: base/templates/base/show-stype.html:97
+msgid "from week"
+msgstr "从周开始"
+
+#: base/templates/base/show-stype.html:98
+#: base/templates/base/show-stype.html:101
+#: configuration/templates/configuration/configuration.html:123
+#: configuration/templates/configuration/configuration.html:128
+msgid "year"
+msgstr "年"
+
+#: base/templates/base/show-stype.html:100
+#: configuration/templates/configuration/configuration.html:126
+msgid "until week"
+msgstr "到周"
+
+#: base/templates/base/show-stype.html:103
+msgid "button_apply"
+msgstr "应用键"
+
+#: base/templates/base/show-stype.html:108
+msgid "Default week"
+msgstr "默认周"
+
+#: base/templates/base/show-stype.html:110
+msgid "Update my default week"
+msgstr "更新我的默认周"
+
+#: base/templates/base/show-stype.html:112
+#: base/templates/base/show-stype.html:136
+msgid "button_save"
+msgstr "保存键"
+
+#: base/templates/base/show-stype.html:121
+msgid "My videoconf links"
+msgstr "我的视频会议链接"
+
+#: base/templates/base/show-stype.html:122
+msgid "Create a link"
+msgstr "创建链接"
+
+#: base/templates/base/show-stype.html:124
+#: base/templates/base/show-stype.html:148
+msgid "button_change"
+msgstr "修改键"
+
+#: base/templates/base/show-stype.html:127
+msgid "My ideal day"
+msgstr "我理想的一天"
+
+#: base/templates/base/show-stype.html:130
+#, fuzzy
+#| msgid ""
+#| "This is the total number of teaching hours I would like to give every day:"
+msgid ""
+"This is the total number of teaching hours I would like to give every "
+"teaching day:"
+msgstr "这是我每天想要提供的总教学时间："
+
+#: base/templates/base/show-stype.html:131
+#, fuzzy
+#| msgid "Maximum"
+msgid "Minimum"
+msgstr "最大限度"
+
+#: base/templates/base/show-stype.html:132
+msgid "Preferred"
+msgstr "优先的"
+
+#: base/templates/base/show-stype.html:145
+msgid "My favorite rooms"
+msgstr "我最喜欢的教室"
+
+#: base/templates/base/show-stype.html:146
+msgid "Select my favorite rooms"
+msgstr "选择我最喜欢的教室"
+
+#: base/templates/base/show-stype.html:171
+msgid "Teachers"
+msgstr "老师"
+
+#: base/templates/base/show-stype.html:172
+#: base/templates/base/show-stype.html:192
+msgid "Transformation in : "
+msgstr "转换为："
+
+#: base/templates/base/show-stype.html:178
+#: base/templates/base/show-stype.html:184
+msgid "Types of classes"
+msgstr "课程类型"
+
+#: base/templates/base/show-stype.html:191 ics/templates/ics/index.html:82
+msgid "Rooms"
+msgstr "教室"
+
+#: base/templates/base/statistics.html:105
+msgid "Number of days of innocuousness per room"
+msgstr "每间教室的闲置天数"
+
+#: base/templates/base/statistics.html:106
+msgid "Number of classes given per teacher"
+msgstr "每位老师开设的课程数量"
+
+#: base/templates/base/themes.html:30
+msgid "Your themes is"
+msgstr ""
+
+#: base/templates/base/visio.html:31
+msgid "Create or modify a link"
+msgstr "创建或修改链接"
+
+#: base/timing.py:211
+msgid "monday"
+msgstr ""
+
+#: base/timing.py:211
+msgid "tuesday"
+msgstr ""
+
+#: base/timing.py:212
+msgid "wednesday"
+msgstr ""
+
+#: base/timing.py:212
+msgid "thursday"
+msgstr ""
+
+#: base/timing.py:213
+msgid "friday"
+msgstr ""
+
+#: base/timing.py:213
+msgid "saturday"
+msgstr ""
+
+#: base/timing.py:214
+msgid "sunday"
+msgstr ""
+
+#: base/views.py:1592
+msgid "Not authorized. New link then."
+msgstr "未经授权。创建一个新的链接。"
+
+#: base/views.py:1595
+msgid "Unknown link. New link then."
+msgstr "未知链接。创建一个新的链接。"
+
+#: base/views.py:1607 notifications/notifications.py:129
+msgid "Created"
+msgstr "已创建"
+
+#: base/views.py:1607
+msgid "Modified"
+msgstr "已修改"
+
+#: base/views.py:1610
+msgid "Tutor does not exist"
+msgstr "该教师不存在"
+
+#: base/weeks.py:34
+msgid "Mon."
+msgstr "周一"
+
+#: base/weeks.py:35
+msgid "Tue."
+msgstr "周二"
+
+#: base/weeks.py:36
+msgid "Wed."
+msgstr "周三"
+
+#: base/weeks.py:37
+msgid "Thu."
+msgstr "周四"
+
+#: base/weeks.py:38
+msgid "Fri."
+msgstr "周五"
+
+#: base/weeks.py:39
+msgid "Sat."
+msgstr "周六"
+
+#: base/weeks.py:40
+msgid "Sun."
+msgstr "周日"
+
+#: configuration/templates/configuration/configuration.html:15
+msgid ""
+"Step 1 - Database configuration (teachers, groups, rooms, course types, etc.)"
+msgstr "第1步-数据库配置（教师，小组，教室，课程类型等）"
+
+#: configuration/templates/configuration/configuration.html:16
+msgid "Option A: Using a spreadsheet file"
+msgstr "选项A：使用电子表格文件"
+
+#: configuration/templates/configuration/configuration.html:18
+msgid "Configuration file canvas"
+msgstr "配置文件大纲"
+
+#: configuration/templates/configuration/configuration.html:19
+msgid "Download and then complete the file below."
+msgstr "下载并完成以下文件"
+
+#: configuration/templates/configuration/configuration.html:20
+#, fuzzy
+#| msgid "Click to download the configuration file"
+msgid "Click to download the empty configuration file"
+msgstr "点击下载配置文件"
+
+#: configuration/templates/configuration/configuration.html:21
+#: configuration/templates/configuration/configuration.html:73
+msgid "Download"
+msgstr "下载"
+
+#: configuration/templates/configuration/configuration.html:24
+#, fuzzy
+#| msgid "Click to download the planning file outline"
+msgid "Click to make and download a new fullfilled database file"
+msgstr "点击下载计划文件大纲"
+
+#: configuration/templates/configuration/configuration.html:25
+#: configuration/templates/configuration/configuration.html:77
+#: configuration/templates/configuration/configuration.html:88
+msgid " (it may last several minuts)."
+msgstr ""
+
+#: configuration/templates/configuration/configuration.html:32
+#: configuration/templates/configuration/configuration.html:84
+#: configuration/templates/configuration/configuration.html:95
+msgid "Make_and_download"
+msgstr ""
+
+#: configuration/templates/configuration/configuration.html:37
+msgid "Configuration file completed"
+msgstr "配置文件完成"
+
+#: configuration/templates/configuration/configuration.html:38
+msgid "Upload the completed configuration file."
+msgstr "上传完成的配置文件"
+
+#: configuration/templates/configuration/configuration.html:39
+#: configuration/templates/configuration/configuration.html:104
+msgid "Only xlsx format is accepted."
+msgstr "仅接受xlsx格式。"
+
+#: configuration/templates/configuration/configuration.html:43
+#: ics/templates/ics/index.html:98
+msgid "Department"
+msgstr "部门"
+
+#: configuration/templates/configuration/configuration.html:44
+msgid "Create"
+msgstr "创建"
+
+#: configuration/templates/configuration/configuration.html:45
+msgid "Edit"
+msgstr "编辑"
+
+#: configuration/templates/configuration/configuration.html:48
+#: configuration/templates/configuration/configuration.html:153
+#: templates/base.html:117
+msgid "Import"
+msgstr "输入"
+
+#: configuration/templates/configuration/configuration.html:53
+#: configuration/templates/configuration/configuration.html:157
+msgid "Verdict :"
+msgstr "定论："
+
+#: configuration/templates/configuration/configuration.html:57
+msgid "Option B: With Flopeditor"
+msgstr "选项B：使用Flopeditor"
+
+#: configuration/templates/configuration/configuration.html:59
+msgid "Click here"
+msgstr "点击这里"
+
+#: configuration/templates/configuration/configuration.html:59
+msgid " to go to Flopeditor."
+msgstr "跳转至Flopeditor"
+
+#: configuration/templates/configuration/configuration.html:60
+msgid "If you need help, you can consult the Flopeditor documentation on "
+msgstr "如果需要帮助，可以查阅Flopeditor文档在"
+
+#: configuration/templates/configuration/configuration.html:60
+msgid "this page."
+msgstr "此页面"
+
+#: configuration/templates/configuration/configuration.html:63
+msgid ""
+"Step 2 - Plan the lessons (which lesson in which week, which teacher gives "
+"which lesson)"
+msgstr "第2步-计划课程（在哪一周的哪门课程，哪位老师教哪门课程）"
+
+#: configuration/templates/configuration/configuration.html:65
+msgid "Template for the planning file from the configuration file"
+msgstr "配置文件中计划文件的模板"
+
+#: configuration/templates/configuration/configuration.html:66
+#, fuzzy
+#| msgid "Click to download the planning file outline"
+msgid "Click to download the current planning file outline"
+msgstr "点击下载计划文件大纲"
+
+#: configuration/templates/configuration/configuration.html:76
+#, fuzzy
+#| msgid "Click to download the planning file outline"
+msgid "Click to make and download a new blank planning file outline"
+msgstr "点击下载计划文件大纲"
+
+#: configuration/templates/configuration/configuration.html:87
+#, fuzzy
+#| msgid "Click to download the planning file outline"
+msgid "Click to make and download a new fullfilled planning file outline"
+msgstr "点击下载计划文件大纲"
+
+#: configuration/templates/configuration/configuration.html:103
+msgid "Completed planning file"
+msgstr "完成的计划文件"
+
+#: configuration/templates/configuration/configuration.html:104
+msgid "Upload the completed planning file."
+msgstr "上传完成的计划文件。"
+
+#: configuration/templates/configuration/configuration.html:121
+#, fuzzy
+#| msgid "from week"
+msgid "From week"
+msgstr "从周开始"
+
+#: configuration/templates/configuration/configuration.html:135
+msgid "Only for periods "
+msgstr ""
+
+#: configuration/templates/configuration/configuration.html:141
+msgid "Stabilization ?"
+msgstr "稳定？"
+
+#: configuration/templates/configuration/configuration.html:144
+#, fuzzy
+#| msgid "Reassign rooms"
+msgid "(Re)assign colors ?"
+msgstr "重新分配教室"
+
+#: cstmanager/templates/cstmanager/index.html:3
+#, fuzzy
+#| msgid "Constraints"
+msgid "Constraints manager"
+msgstr "约束条件"
+
+#: cstmanager/templates/cstmanager/index.html:34
+#, fuzzy
+#| msgid "Constraints"
+msgid "New Constraint"
+msgstr "约束条件"
+
+#: cstmanager/templates/cstmanager/index.html:39
+msgid "Discard Changes"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:44
+msgid "Commit Changes"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:49
+#, fuzzy
+#| msgid "Constraints"
+msgid "Reload Constraints"
+msgstr "约束条件"
+
+#: cstmanager/templates/cstmanager/index.html:53
+msgid "Search"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:69
+#, fuzzy
+#| msgid "Set default week"
+msgid "See all weeks"
+msgstr "设置默认周"
+
+#: cstmanager/templates/cstmanager/index.html:76
+msgid "Show Disabled"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:81
+msgid "Clear Filters"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:86
+msgid "Gathering :"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:88
+msgid "by status"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:89
+msgid "by class"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:90
+msgid "None"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:102
+#, fuzzy
+#| msgid "Constraints"
+msgid "Edit constraint"
+msgstr "约束条件"
+
+#: cstmanager/templates/cstmanager/index.html:110
+msgid "Select type..."
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:116
+msgid "Title"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:121
+msgid "Comment"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:132
+msgid "Activated?"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:146
+#, fuzzy
+#| msgid "Move/Cancel"
+msgid "Cancel"
+msgstr "移动/取消"
+
+#: cstmanager/templates/cstmanager/index.html:149
+msgid "Save changes"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:157
+msgid "Preanalyse"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:177
+msgid "Select all"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:182
+#, fuzzy
+#| msgid "Constraints"
+msgid "Selected constraints :"
+msgstr "约束条件"
+
+#: cstmanager/templates/cstmanager/index.html:190
+msgid "Weight"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:205
+msgid "Set weight"
+msgstr ""
+
+#: cstmanager/templates/cstmanager/index.html:208
+msgid "Delete"
+msgstr ""
+
+#: ics/templates/ics/index.html:35
+msgid "iCal Subscription"
+msgstr "订阅iCal"
+
+#: ics/templates/ics/index.html:36
+msgid ""
+"Copy the corresponding link of the calendar you would like to add to your "
+"calendar manager."
+msgstr "将您要添加的日历的相应链接复制到日历管理器中。"
+
+#: ics/templates/ics/index.html:38
+msgid "Groups"
+msgstr "组"
+
+#: ics/templates/ics/index.html:40
+msgid "Structural"
+msgstr ""
+
+#: ics/templates/ics/index.html:42 ics/templates/ics/index.html:54
+msgid "Training program"
+msgstr "培训项目"
+
+#: ics/templates/ics/index.html:42 ics/templates/ics/index.html:54
+#, fuzzy
+#| msgid "Group"
+msgid "Group name"
+msgstr "组"
+
+#: ics/templates/ics/index.html:47 ics/templates/ics/index.html:59
+#: ics/templates/ics/index.html:76 ics/templates/ics/index.html:89
+#: ics/templates/ics/index.html:102
+msgid "Copy this link"
+msgstr "复制此链接"
+
+#: ics/templates/ics/index.html:52
+msgid "Transversal"
+msgstr ""
+
+#: ics/templates/ics/index.html:69
+msgid "First name"
+msgstr "名"
+
+#: ics/templates/ics/index.html:69
+msgid "Last lame"
+msgstr "姓"
+
+#: ics/templates/ics/index.html:69
+msgid "Department(s)"
+msgstr "部门"
+
+#: ics/templates/ics/index.html:69 ics/templates/ics/index.html:85
+#: ics/templates/ics/index.html:98
+msgid "Address"
+msgstr "地址"
+
+#: ics/templates/ics/index.html:85
+msgid "Name"
+msgstr "名字"
+
+#: ics/templates/ics/index.html:95
+msgid "Planned generations"
+msgstr "计划好的生成"
+
+#: notifications/notifications.py:125
+msgid "Deleted"
+msgstr ""
+
+#: notifications/notifications.py:147 notifications/notifications.py:161
+msgid "Mode"
+msgstr ""
+
+#: notifications/notifications.py:148 notifications/notifications.py:162
+#: notifications/notifications.py:184 notifications/notifications.py:232
+#: notifications/notifications.py:267
+#, fuzzy
+#| msgid "Date "
+msgid "Date"
+msgstr "日期 "
+
+#: notifications/notifications.py:149 notifications/notifications.py:163
+#: notifications/notifications.py:232 notifications/notifications.py:267
+msgid "Start time"
+msgstr ""
+
+#: notifications/notifications.py:150 notifications/notifications.py:164
+msgid "Course Type"
+msgstr ""
+
+#: notifications/notifications.py:151 notifications/notifications.py:165
+#, fuzzy
+#| msgid "Modules"
+msgid "Module"
+msgstr "模块"
+
+#: notifications/notifications.py:152
+#, fuzzy
+#| msgid "Tutors"
+msgid "Tutor"
+msgstr "教师"
+
+#: notifications/notifications.py:153 notifications/notifications.py:168
+#, fuzzy
+#| msgid "Rooms"
+msgid "Room"
+msgstr "教室"
+
+#: notifications/notifications.py:166
+#, fuzzy
+#| msgid "Training program"
+msgid "Train_prog"
+msgstr "培训项目"
+
+#: notifications/notifications.py:167
+#, fuzzy
+#| msgid "Groups"
+msgid "Group"
+msgstr "组"
+
+#: notifications/notifications.py:200
+msgid "[flop!Scheduler] Changes on your planning"
+msgstr ""
+
+#: notifications/notifications.py:203
+#, python-format
+msgid ""
+"This email is automatically generated by flop!Scheduler. To manage your "
+"notifications settings, please <a href='%(url)s/edt/%(dept)s/semaine-type'> "
+"click here <a/>."
+msgstr ""
+
+#: notifications/notifications.py:224 notifications/notifications.py:254
+msgid "Hi "
+msgstr ""
+
+#: notifications/notifications.py:225 notifications/notifications.py:255
+#, python-format
+msgid "Here are the changes of your planning for the %g following days :"
+msgstr ""
+
+#: notifications/notifications.py:233
+#, python-format
+msgid "For the department %s :"
+msgstr ""
+
+#: people/templates/people/login.html:52
+msgid "Forgot password?"
+msgstr "忘记密码？"
+
+#: people/templates/people/login.html:55 templates/base.html:131
+msgid "Sign in"
+msgstr "登入"
+
+#: people/templates/people/studentPreferencesSelection.html:34
+msgid "Student Preferences"
+msgstr ""
+
+#: people/templates/people/studentPreferencesSelection.html:43
+msgid "Preferences for your group"
+msgstr ""
+
+#: people/templates/people/studentPreferencesSelection.html:45
+msgid "Morning or evening?"
+msgstr ""
+
+#: people/templates/people/studentPreferencesSelection.html:52
+msgid "Busy days VS Free half-days"
+msgstr ""
+
+#: people/templates/people/studentPreferencesSelection.html:60
+msgid "Holes?"
+msgstr ""
+
+#: people/templates/people/studentPreferencesSelection.html:66
+msgid "Eat early or late?"
+msgstr ""
+
+#: people/views.py:223
+msgid "Not allowed"
+msgstr "未经允许"
+
+#: people/views.py:229
+#, python-brace-format
+msgid "No such user as {user}"
+msgstr "没有 {user} 这样的用户"
+
+#: quote/forms.py:41
+msgid "Quote "
+msgstr "引用 "
+
+#: quote/forms.py:42
+msgid "Last name "
+msgstr "姓 "
+
+#: quote/forms.py:43
+msgid "First name "
+msgstr "名 "
+
+#: quote/forms.py:44
+msgid "Nickname "
+msgstr "昵称 "
+
+#: quote/forms.py:45
+msgid "Author description "
+msgstr "作者描述 "
+
+#: quote/forms.py:46
+msgid "Date "
+msgstr "日期 "
+
+#: quote/forms.py:47
+msgid "Header "
+msgstr "标题 "
+
+#: quote/forms.py:48
+msgid "Category "
+msgstr "类别 "
+
+#: roomreservation/models.py:48
+#, fuzzy
+#| msgid "from week"
+msgid "By week"
+msgstr "从周开始"
+
+#: roomreservation/models.py:49
+msgid "Each month at the same date"
+msgstr ""
+
+#: roomreservation/models.py:50
+msgid "By Month"
+msgstr ""
+
+#: roomreservation/models.py:92
+#, fuzzy
+#| msgid "First name"
+msgid "First"
+msgstr "名"
+
+#: roomreservation/models.py:93
+msgid "Second"
+msgstr ""
+
+#: roomreservation/models.py:94
+msgid "Third"
+msgstr ""
+
+#: roomreservation/models.py:95
+msgid "Fourth"
+msgstr ""
+
+#: roomreservation/models.py:96
+msgid "Ante Last"
+msgstr ""
+
+#: roomreservation/models.py:97
+#, fuzzy
+#| msgid "Last lame"
+msgid "Last"
+msgstr "姓"
+
+#: roomreservation/templates/roomreservation/index.html:3
+#, fuzzy
+#| msgid "Room modification"
+msgid "Room reservation"
+msgstr "教室的修改"
+
+#: solve_board/templates/solve_board/main-board.html:36
+msgid "Schedule Generation"
+msgstr "时间表生成"
+
+#: solve_board/templates/solve_board/main-board.html:66 templates/base.html:113
+msgid "Constraints"
+msgstr "约束条件"
+
+#: solve_board/templates/solve_board/main-board.html:67
+msgid ""
+"All constraints appearing in bolded - with no weight - will be considered "
+"mandatory, the other ones will considered as preferences."
+msgstr "所有以粗体显示的约束-不带权重-将被视为强制性的，其他的将被视为首选。"
+
+#: solve_board/templates/solve_board/main-board.html:72
+msgid "Configuration"
+msgstr "配置"
+
+#: solve_board/templates/solve_board/main-board.html:77
+msgid "Week⋅s"
+msgstr "星期"
+
+#: solve_board/templates/solve_board/main-board.html:82
+msgid "All weeks together ?"
+msgstr ""
+
+#: solve_board/templates/solve_board/main-board.html:86
+msgid "Training Program"
+msgstr "培训项目"
+
+#: solve_board/templates/solve_board/main-board.html:90
+msgid "Stabilization"
+msgstr "稳定"
+
+#: solve_board/templates/solve_board/main-board.html:95
+msgid "Solver"
+msgstr "求解器"
+
+#: solve_board/templates/solve_board/main-board.html:107
+#, fuzzy
+#| msgid "Reassign rooms"
+msgid "Pre-assign rooms"
+msgstr "重新分配教室"
+
+#: solve_board/templates/solve_board/main-board.html:109
+#, fuzzy
+#| msgid "Reassign rooms"
+msgid "Post-assign rooms"
+msgstr "重新分配教室"
+
+#: solve_board/templates/solve_board/main-board.html:112
+msgid "Time limit (minuts)"
+msgstr ""
+
+#: solve_board/templates/solve_board/main-board.html:118
+msgid "Unlimited"
+msgstr "无限"
+
+#: templates/base.html:53
+msgid "Schedule_title"
+msgstr "日程表_标题"
+
+#: templates/base.html:86
+msgid "<span id=flopGreen >flop</span>!<span id=EDTRed >Scheduler</span>"
+msgstr "<span id=flopGreen >flop</span>!<span id=EDTRed >日程表</span>"
+
+#: templates/base.html:102
+msgid "Schedule_banner"
+msgstr "横幅"
+
+#: templates/base.html:104
+msgid "Move/Cancel"
+msgstr "移动/取消"
+
+#: templates/base.html:106
+msgid "Preferences"
+msgstr "首选项"
+
+#: templates/base.html:107
+msgid "iCal"
+msgstr "iCal"
+
+#: templates/base.html:108
+msgid "Help"
+msgstr "帮助"
+
+#: templates/base.html:109
+msgid "Messages"
+msgstr "留言"
+
+#: templates/base.html:110
+msgid "Modules"
+msgstr "模块"
+
+#: templates/base.html:111
+msgid "Reservations"
+msgstr ""
+
+#: templates/base.html:114
+msgid "Generate"
+msgstr "生成"
+
+#: templates/base.html:115
+msgid "flop!EDITOR"
+msgstr ""
+
+#: templates/base.html:118
+msgid "Admin"
+msgstr "管理"
+
+#: templates/base.html:124 templates/base.html:126 templates/base.html:128
+msgid "Sign out"
+msgstr "登出"
+
+#: templates/base.html:135
+msgid "Signed in as "
+msgstr "登入为"
+
+#~ msgid "Pseudo : 4 characters max"
+#~ msgstr "昵称：最多4个字符"
+
+#~ msgid "Sign up"
+#~ msgstr "注册"
+
+#~ msgid "I am"
+#~ msgstr "我是"
+
+#~ msgid "A student"
+#~ msgstr "学生"
+
+#~ msgid "A teacher"
+#~ msgstr "老师"
+
+#~ msgid "A temporary teacher"
+#~ msgstr "临时老师"
+
+#~ msgid "A tech or administrative staff"
+#~ msgstr "技术人员或行政人员"
+
+#, fuzzy
+#~| msgid "Group"
+#~ msgid "Group by class name"
+#~ msgstr "组"
+
+#, fuzzy
+#~| msgid "Modules"
+#~ msgid "module"
+#~ msgstr "模块"
+
+#, fuzzy
+#~| msgid "Groups"
+#~ msgid "group"
+#~ msgstr "组"
+
+#~ msgid "Maximum time limit for resolution (minuts)"
+#~ msgstr "解析的最大时间限制（分钟）"
+
+#~ msgid "Statistics"
+#~ msgstr "统计数据"

@@ -1,0 +1,64 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "flopeditor/base.html" %}
+{% load static %}
+
+{% block content-flopeditor %}
+<div class="card">
+  <ul class="nav card-header nav-tabs">
+        {% block card_header %}
+        {% endblock %}
+    </ul>
+    <div class="card-body">
+        {% block before_crud_js %}{% endblock %}
+        <div class="row mb-2">
+          <div class="col">
+            {% if has_dept_perm %}<button type="button" name="button" id="cjs-btn" class="btn btn-raised btn-success">Enregistrer</button>{% endif %}
+          </div>
+          <div class="col"></div>
+          <div class="col">
+            {% block crud_js_filter %}<input type="text" class="form-control" id="cjs-input" placeholder="Rechercher...">{% endblock %}
+          </div>
+
+        </div>
+        {% block between_crud_js_and_save_btn %}{% endblock %}
+
+        <crud-js url="{% block crud_js_url%}{% endblock %}" filter="cjs-input" {% if has_dept_perm %} save-button="cjs-btn" editable {% endif %} >
+            <loading>
+                <h1 class="text-info"><i class="fas fa-spinner fa-pulse"></i></h1>
+            </loading>
+        </crud-js>
+
+        {% block after_crud_js %}{% endblock %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+    {{ block.super }}
+    <script> const CSRF = "{{ csrf_token }}" </script>
+    <script src="{% static 'flopeditor/js/crudjs.min.js' %}"></script>
+{% endblock %}

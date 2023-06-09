@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+{% if departments %}
+<script type="text/javascript">
+function goTo(url){
+    location.href = url;
+};
+</script>
+<div class="dept_container">
+    <div class="dept_list">
+        <p>
+            {% trans "Please choose your department : " %}
+        </p>
+        <ul>
+            {% for department in departments %}
+            <li onclick="goTo('{% url "base:edt" department.abbrev %}');">{{ department.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% else %}
+    <p>No departments are available.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+.description-container{
+  height: 750px;
+  width: 750px;
+}
+
+.description-text{
+  height: 500px;
+  width: 500px;
+  resize: none;
+}
+
+.edit {
+    background-color: forestgreen; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    float: right;
+  }
+
+.edit:hover{
+  background-color: #134e13;
+}
+
+label[for=id_description]{
+  color: green;
+}
+

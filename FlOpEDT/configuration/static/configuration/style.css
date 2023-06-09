@@ -1,0 +1,11 @@
+.step {
+    margin: 1em;
+}
+
+fieldset {
+    display: inline-block;
+}
+
+fieldset input[type=text] {
+    display: block;
+}

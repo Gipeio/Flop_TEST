@@ -1,0 +1,67 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %} EDT {% endblock %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static "base/better.css" %}"/>
+
+<div id="tools-main" style="padding:10px;">
+
+    <h4>{% trans "Room modification" %}</h4>
+    <p>{% trans "Right click on the course in question, the available rooms appear. Click on + to choose a room that is not available for this course. Don't forget to validate any changes." %}</p>
+
+    {% if has_department_perm %}
+    <h4>{% trans "Create an account" %}</h4>
+    <p><a href="{% url "people:create_user" %}">{% trans "Here" %}</a></p>
+    {% endif %}
+    
+    <h4>{% trans "Modification of an account" %} </h4>
+    <p>{% trans "Click on his nickname (his initials) at the top right of the page." %}</p>
+    
+    <h4>{% trans "Change password" %}</h4>
+    <p>{% trans "Click on" %} <a href="{% url 'people:password_change' %}">{% trans "this link" %}</a> {% trans "to change your password." %}</p>
+
+    <h4>{% trans "Password reminder" %}</h4>
+    <p>{% trans "Click on" %} <a href="{% url 'people:password_reset' %}"> {% trans "this link" %}</a> {% trans "for a password reminder, or via 'Login' at the top of the page." %}</p>
+
+    <h4>{% trans "Direct link to a particular group" %}</h4>
+    <p> {% trans 'Add "?promo=...&gp=..." at the end of the url, for example ' %}</p>
+    <p> {% trans 'To know the name of your training programme and group, check the list ' %}<a href="{% url 'ics:index' department %}"> {% trans "here" %}</a>.</p>
+
+
+    <h4>{% trans "How availability entry work" %} </h4>
+    <p>{% trans "When generating the schedule for a given week, if no availability is entered for that week, the typical week defines the availability." %}</p>
+    
+    <h4>{% trans "Some Tutorial Videos" %} </h4>
+    <table><tr>
+    <td><iframe width="560" height="315" src="https://www.youtube.com/embed/4uxITtWVkIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+    <td><iframe width="560" height="315" src="https://www.youtube.com/embed/XrAzkiHydnw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+    <td><iframe width="560" height="315" src="https://www.youtube.com/embed/Yvyg2ad7kCA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+    </tr></table>
+    
+</div>
+{% endblock %}

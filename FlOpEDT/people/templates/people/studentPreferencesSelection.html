@@ -1,0 +1,103 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+
+
+{% extends "base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+<script href="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+{% block title %} {% trans "Student Preferences" %} {% endblock %}
+
+{% block content %}
+
+</br></br></br>
+
+<form action="{% url 'people:student_preferences' %}" method="post" id="form_pref">
+  {% csrf_token %}
+  <fieldset>
+    <legend>{% trans "Preferences for your group" %}</legend>
+      </br>
+      <div><b> {% trans "Morning or evening?" %}</b></div>
+      <div>
+
+        <input type="range" id="morning" name="morning_evening" min="0" max="1" step="0.25" value="{{ morning|stringformat:'.2f' }}"/>
+        <output name="result">{{ morning_txt }}</output>
+      </div>
+        </br>
+      <div><b>{% trans "Busy days VS Free half-days" %}</b></div>
+
+      <div>
+
+        <input type="range" id="free_half_day" name="light_free" min="0" max="1" step="0.25" value="{{ free_half_day|stringformat:'.2f' }}"/>
+        <output name="resultdeux">{{ free_half_day_txt }}</output>
+      </div>
+        </br>
+      <div><b>{% trans "Holes?" %}</b></div>
+      <div>
+        <input type="range" id="hole" name="hole_nothole" min="0" max="1" step="0.5" value="{{ hole|stringformat:'.2f' }}"/>
+        <output name="resulthole">{{ hole_txt }}</output>
+      </div>
+        <br/>
+      <div><b>{% trans "Eat early or late?" %}</b></div>
+
+      <div>
+        <input type="range" id="selfeat" name="eat" min="0" max="1" step="0.5"
+        value="{{ selfeat|stringformat:'.2f' }}"/>
+        <output name="resulteat">{{ eat_txt }}</output>
+      </div>
+        <br/><br/>
+      <button type="submit" form="form_pref" value="Submit">Valider</button>
+  </fieldset>
+
+{% comment %}
+    <fieldset class="twofieldset">
+      <legend>Préférences demi-journée libre</legend>
+        <br/>
+      <div>Indiquez <b>en rouge</b> les demies-journées pour lesquels avoir cours est <b>moins souhaitable</b>...</div>
+        <div align="center">
+          <svg id="grille">
+
+          </svg>
+        </div>
+        <button class="rightbutton" type="submit" form="form_pref" value="Submit">Valider</button>
+    </fieldset>
+ {% endcomment %}
+
+</form>
+
+
+<br/><br/>
+{% include 'base/notification.html' %}
+
+{# Themes #}
+{% include 'base/themes.html' %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'people/student_preferences.css' %}"/>
+<script src="{% static 'people/student_preferences.js' %}"></script>
+
+{% endblock %}

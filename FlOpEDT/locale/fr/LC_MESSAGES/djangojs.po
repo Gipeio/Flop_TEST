@@ -1,0 +1,746 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-26 13:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: base/static/base/action.js:852
+msgid "The schedule shall be fully regenerated (see downside to the right)."
+msgstr "L'emploi du temps va être regénéré totalement (cf. en bas à droite)."
+
+#: base/static/base/action.js:853
+msgid ""
+"Just update your availabilities : they will be considered for the next "
+"generation."
+msgstr ""
+"Contentez-vous de mettre à jour vos disponibilités : elles seront prises en "
+"compte lors de la regénération."
+
+#: base/static/base/creation.js:868
+msgid "Courses :"
+msgstr "Cours :"
+
+#: base/static/base/creation.js:875
+msgid "Avail :"
+msgstr "Dispos :"
+
+#: base/static/base/creation.js:1851
+msgid "Validate timetable"
+msgstr "Valider EDT"
+
+#: base/static/base/creation.js:1974
+msgid "Validate availabilities"
+msgstr "Valider les disponibilités"
+
+#: base/static/base/creation.js:2004
+msgid "Apply"
+msgstr "Appliquer"
+
+#: base/static/base/creation.js:2012
+msgid "tipical week"
+msgstr "semaine type"
+
+#: base/static/base/decale.js:35
+msgid "Module    "
+msgstr "Module    "
+
+#: base/static/base/decale.js:36
+msgid "Teacher    "
+msgstr "Prof    "
+
+#: base/static/base/decale.js:37
+msgid "Group    "
+msgstr "Groupe    "
+
+#: base/static/base/decale.js:322
+msgid "Definitely cancel"
+msgstr "Annuler définitivement"
+
+#: base/static/base/decale.js:334
+msgid "Put on hold"
+msgstr "Mettre en attente"
+
+#: base/static/base/decale.js:351
+msgid "Move to week "
+msgstr "Déplacer en semaine "
+
+#: base/static/base/decale.js:361
+msgid "by "
+msgstr "par "
+
+#: base/static/base/decale.js:487
+msgid "Confirm"
+msgstr "Valider"
+
+#: base/static/base/decale.js:518
+msgid "No checked box, no moved course!"
+msgstr "Aucune case cochée, aucun cours déplacé"
+
+#: base/static/base/decale.js:522
+msgid "You want these courses to have no tutor, right?"
+msgstr "Vous voulez que ces cours n'aient pas de prof, c'est bien ça?"
+
+#: base/static/base/decale.js:523
+msgid "Then please assign these courses to someone."
+msgstr "Dans ce cas assignez ces cours à une personne."
+
+#: base/static/base/decale.js:529
+msgid "Chose the action you want to do."
+msgstr "Choisissez l'action que vous voulez faire."
+
+#: base/static/base/decale.js:647
+msgid "not scheduled"
+msgstr "pas placé"
+
+#: base/static/base/logo.js:84
+msgid ""
+"Schedule manager <span id=\"flopGreen\">fl</span>exible and <span "
+"id=\"flopGreen\">op</span>enSource"
+msgstr ""
+"Gestionnaire d'emplois du temps <span id=\"flopGreen\">fl</span>exible et "
+"<span id=\"flopGreen\">op</span>enSource"
+
+#: base/static/base/logo.js:85
+msgid ""
+"\"Who want to manage schedules this year?\" ...  ... <span "
+"id=\"flopGreen\">flop</span>!"
+msgstr ""
+"Qui veut gérer les emplois du temps cette année ? ...  ... <span "
+"id=\"flopGreen\">flop</span> !"
+
+#: base/static/base/logo.js:86
+msgid "And your schedules will <span id=\"flopRedDel\">flop</span> be a hit!"
+msgstr ""
+"Et votre emploi du temps fera un <span id=\"flopRedDel\">flop</span> carton !"
+
+#: base/static/base/logo.js:87
+msgid "Even your logo will be on time..."
+msgstr "Et même votre logo sera à l'heure..."
+
+#: base/static/base/logo.js:88
+msgid "Everybody do the <span id=\"flopGreen\">flop</span>!"
+msgstr "Everybody do the <span id=\"flopGreen\">flop</span>!"
+
+#: base/static/base/logo.js:89
+msgid ""
+"You got to make the schedules? Don't flip out: <span id=\"flopGreen\">flop</"
+"span> it!"
+msgstr ""
+"C'est à vous de gérer les <span id=\"flopRed\">EDT</span>? Ne flippez pas : "
+"<span id=\"flopGreen\">flop</span>ez!"
+
+#: base/static/base/logo.js:90
+msgid "To flop or not to flop, that is the question (for your schedules)"
+msgstr "To flop or not to flop, telle est la question (pour tes EDT)"
+
+#: base/static/base/logo.js:91
+msgid "flop!Scheduler != flop "
+msgstr "flop!EDT != flop"
+
+#: base/static/base/logo.js:92
+msgid "Just <span id=\"flopGreen\">flop</span> it."
+msgstr "Just <span id=\"flopGreen\">flop</span> it."
+
+#: base/static/base/logo.js:93
+msgid "Schedule... khhh... I am your flop!"
+msgstr "EDT... khhh... I am your flop!"
+
+#: base/static/base/logo.js:94
+msgid "What else?"
+msgstr "What else?"
+
+#: base/static/base/room_preference.js:30
+msgid "Successful operation"
+msgstr "Opération réussie"
+
+#: base/static/base/room_preference.js:33
+msgid "It's a fail. "
+msgstr "C'est un échec. "
+
+#: base/static/base/statistics.js:80 base/static/base/variables.js:951
+msgid "Room"
+msgstr "Salle"
+
+#: base/static/base/statistics.js:81
+msgid "Number of days"
+msgstr "Nombre de jours"
+
+#: base/static/base/transformation.js:267
+#: base/static/base/transformation_tmp.js:267
+#: base/static/base/transformation_tmp.js:269
+msgid "You have to do  "
+msgstr "Vous devez faire  "
+
+#: base/static/base/transformation.js:269
+#: base/static/base/transformation_tmp.js:272
+msgid "No course for you this week."
+msgstr "Vous n'intervenez pas cette semaine."
+
+#: base/static/base/transformation.js:277
+#: base/static/base/transformation_tmp.js:281
+#: base/static/base/transformation_tmp.js:283
+msgid "You propose   "
+msgstr "Vous en proposez    "
+
+#: base/static/base/transformation.js:290
+#: base/static/base/transformation_tmp.js:296
+msgid "Maybe you should free up more..."
+msgstr "Il faudrait peut-être en rajouter..."
+
+#: base/static/base/transformation.js:292
+#: base/static/base/transformation_tmp.js:298
+msgid "It seems OK."
+msgstr "Ca semble OK."
+
+#: base/static/base/transformation.js:296
+#: base/static/base/transformation_tmp.js:302
+msgid "Thank you for adding some."
+msgstr "Merci d'en ajouter "
+
+#: base/static/base/transformation_tmp.js:267
+#: base/static/base/transformation_tmp.js:281
+msgid " slot(s)"
+msgstr " créneau(x)"
+
+#: base/static/base/update.js:1339
+msgid "No planned re-generation"
+msgstr "Pas de regénération prévue"
+
+#: base/static/base/update.js:1343
+msgid "Full (minor) generation planned on "
+msgstr "Regénération totale (mineure) le"
+
+#: base/static/base/update.js:1346
+msgid "Full generation planned (probably on "
+msgstr "Regénération totale prévue (probablement le"
+
+#: base/static/base/update.js:1349
+msgid "Minor generation planned (probably on "
+msgstr "Regénération mineure prévue (probablement le"
+
+#: base/static/base/variables.js:478 base/static/base/variables.js:486
+msgid "Modify"
+msgstr "Modifier"
+
+#: base/static/base/variables.js:590
+msgid "Filters"
+msgstr "Filtres"
+
+#: base/static/base/variables.js:594
+msgid "Employees"
+msgstr "Salarié·e·s"
+
+#: base/static/base/variables.js:598
+msgid "Posts"
+msgstr "Postes"
+
+#: base/static/base/variables.js:603
+msgid "Groups"
+msgstr "Groupes"
+
+#: base/static/base/variables.js:607
+msgid "Teachers"
+msgstr "Profs"
+
+#: base/static/base/variables.js:611
+msgid "Modules"
+msgstr "Modules"
+
+#: base/static/base/variables.js:615
+msgid "Rooms"
+msgstr "Salles"
+
+#: base/static/base/variables.js:794
+msgid "KO"
+msgstr ""
+"C'est un échec cuisant. Trouvez un·e responsable de flop!EDT et faites lui "
+"part de vos problèmes."
+
+#: base/static/base/variables.js:795
+msgid "OK"
+msgstr "La modification s'est déroulée sans accroc."
+
+#: base/static/base/variables.js:868 base/static/base/variables.js:991
+msgid "What to change ?"
+msgstr "Que changer ?"
+
+#: base/static/base/variables.js:881
+msgid "Module teacher ?"
+msgstr "Enseignant⋅e du module ?"
+
+#: base/static/base/variables.js:894 base/static/base/variables.js:907
+msgid "Alphabetical order"
+msgstr "Ordre alphabétique"
+
+#: base/static/base/variables.js:919
+msgid "Virtual classroom link ?"
+msgstr "Lien de la classe en visioconférence ?"
+
+#: base/static/base/variables.js:931
+msgid "Relating to who ?"
+msgstr "Relatif à qui ?"
+
+#: base/static/base/variables.js:942
+msgid "No room available"
+msgstr "Pas de salle disponible"
+
+#: base/static/base/variables.js:943
+msgid "Room available"
+msgstr "Salle disponible"
+
+#: base/static/base/variables.js:944
+msgid "Rooms available"
+msgstr "Salles disponibles"
+
+#: base/static/base/variables.js:950
+msgid "No room"
+msgstr "Pas de salle"
+
+#: base/static/base/variables.js:952
+msgid "Every rooms"
+msgstr "Toutes les salles"
+
+#: base/static/base/variables.js:975
+msgid "Who should do it ?"
+msgstr "Qui s'y colle ?"
+
+#: configuration/static/configuration/configuration_vars.js:1
+msgid ""
+"You will erase ALL COURSES corresponding to the following conditions. Do you "
+"confirm import ?"
+msgstr ""
+"Vous allez effacer TOUS LES COURS correspondant aux conditions suivantes. "
+"Confirmez-vous l'import ?"
+
+#: configuration/static/configuration/configuration_vars.js:3
+msgid "From week"
+msgstr "De la semaine"
+
+#: configuration/static/configuration/configuration_vars.js:3
+#: configuration/static/configuration/configuration_vars.js:4
+msgid "year"
+msgstr "année"
+
+#: configuration/static/configuration/configuration_vars.js:4
+msgid "until week"
+msgstr "à la semaine"
+
+#: configuration/static/configuration/configuration_vars.js:5
+msgid "Department : "
+msgstr "Département : "
+
+#: configuration/static/configuration/configuration_vars.js:6
+msgid "Periods : "
+msgstr "Périodes : "
+
+#: configuration/static/configuration/configuration_vars.js:7
+msgid "Weeks : "
+msgstr "Semaines : "
+
+#: configuration/static/configuration/configuration_vars.js:8
+msgid "All"
+msgstr "Toutes"
+
+#: cstmanager/static/cstmanager/js/script.js:8
+msgid "time2"
+msgstr "Temps2"
+
+#: cstmanager/static/cstmanager/js/script.js:8
+msgid "nb_max"
+msgstr "Nombre max"
+
+#: cstmanager/static/cstmanager/js/script.js:8
+msgid "weekdays"
+msgstr "Jours de semaine"
+
+#: cstmanager/static/cstmanager/js/script.js:8
+msgid "nb_min"
+msgstr "Nombre min"
+
+#: cstmanager/static/cstmanager/js/script.js:9
+msgid "join2courses"
+msgstr "Joindre les cours"
+
+#: cstmanager/static/cstmanager/js/script.js:9
+msgid "slot_start_time"
+msgstr "Heure de début"
+
+#: cstmanager/static/cstmanager/js/script.js:9
+msgid "curfew_time"
+msgstr "Heure de couvre-feu"
+
+#: cstmanager/static/cstmanager/js/script.js:9
+msgid "weeks"
+msgstr "Semaines"
+
+#: cstmanager/static/cstmanager/js/script.js:10
+msgid "slot_end_time"
+msgstr "Heure de fin"
+
+#: cstmanager/static/cstmanager/js/script.js:10
+msgid "max_number"
+msgstr "Nombre max"
+
+#: cstmanager/static/cstmanager/js/script.js:10
+msgid "max_holes_per_day"
+msgstr "Trous max par jour"
+
+#: cstmanager/static/cstmanager/js/script.js:10
+msgid "train_progs"
+msgstr "Promotions"
+
+#: cstmanager/static/cstmanager/js/script.js:11
+msgid "max_holes_per_week"
+msgstr "Trous max par semaine"
+
+#: cstmanager/static/cstmanager/js/script.js:11
+msgid "limit"
+msgstr "Limite"
+
+#: cstmanager/static/cstmanager/js/script.js:11
+msgid "min_time_per_period"
+msgstr "Temps minimum par période"
+
+#: cstmanager/static/cstmanager/js/script.js:11
+msgid "max_time_per_period"
+msgstr "Temps maximum par période"
+
+#: cstmanager/static/cstmanager/js/script.js:12
+msgid "course_type"
+msgstr "Type de cours"
+
+#: cstmanager/static/cstmanager/js/script.js:12
+msgid "max_hours"
+msgstr "Heures max"
+
+#: cstmanager/static/cstmanager/js/script.js:12
+msgid "fhd_period"
+msgstr "Période"
+
+#: cstmanager/static/cstmanager/js/script.js:12
+msgid "tolerated_margin"
+msgstr "Marge tolérée"
+
+#: cstmanager/static/cstmanager/js/script.js:13
+msgid "number_of_weeks"
+msgstr "Nombre de semaines"
+
+#: cstmanager/static/cstmanager/js/script.js:13
+msgid "guide_tutors"
+msgstr "Accompagnatrice·eur"
+
+#: cstmanager/static/cstmanager/js/script.js:13
+msgid "min_days_nb"
+msgstr "Nombre min de jours"
+
+#: cstmanager/static/cstmanager/js/script.js:13
+msgid "lower_bound_hours"
+msgstr "Limite inférieure d'heures"
+
+#: cstmanager/static/cstmanager/js/script.js:14
+msgid "work_copy"
+msgstr "Numéro de copie"
+
+#: cstmanager/static/cstmanager/js/script.js:14
+msgid "fixed_days"
+msgstr "Jours fixés"
+
+#: cstmanager/static/cstmanager/js/script.js:14
+msgid "module"
+msgstr "Module"
+
+#: cstmanager/static/cstmanager/js/script.js:14
+msgid "tutor"
+msgstr "Enseignant·e"
+
+#: cstmanager/static/cstmanager/js/script.js:14
+msgid "group"
+msgstr "Groupe"
+
+#: cstmanager/static/cstmanager/js/script.js:15
+msgid "possible_rooms"
+msgstr "Salles possibles"
+
+#: cstmanager/static/cstmanager/js/script.js:15
+msgid "start_lunch_time"
+msgstr "Heure de début"
+
+#: cstmanager/static/cstmanager/js/script.js:15
+msgid "end_lunch_time"
+msgstr "Heure de fin"
+
+#: cstmanager/static/cstmanager/js/script.js:15
+msgid "fampm_period"
+msgstr "Période"
+
+#: cstmanager/static/cstmanager/js/script.js:16
+msgid "weekday"
+msgstr "Jour de la semaine"
+
+#: cstmanager/static/cstmanager/js/script.js:16
+msgid "lunch_length"
+msgstr "Durée de la pause"
+
+#: cstmanager/static/cstmanager/js/script.js:16
+msgid "min_break_length"
+msgstr "Durée min de la pause"
+
+#: cstmanager/static/cstmanager/js/script.js:16
+msgid "tutor_status"
+msgstr "Statut de l'enseignant·e"
+
+#: cstmanager/static/cstmanager/js/script.js:17
+msgid "course_types"
+msgstr "Types de cours"
+
+#: cstmanager/static/cstmanager/js/script.js:17
+msgid "possible_week_days"
+msgstr "Jours de la semaine possibles"
+
+#: cstmanager/static/cstmanager/js/script.js:17
+msgid "groups"
+msgstr "Groupes"
+
+#: cstmanager/static/cstmanager/js/script.js:17
+msgid "tutors"
+msgstr "Enseignant·e·s"
+
+#: cstmanager/static/cstmanager/js/script.js:18
+msgid "modules"
+msgstr "Modules"
+
+#: cstmanager/static/cstmanager/js/script.js:18
+msgid "possible_start_times"
+msgstr "Heures de début possibles"
+
+#: cstmanager/static/cstmanager/js/script.js:18
+msgid "forbidden_week_days"
+msgstr "Jours de la semaine interdits"
+
+#: cstmanager/static/cstmanager/js/script.js:19
+msgid "forbidden_start_times"
+msgstr "Heures de début interdites"
+
+#: cstmanager/static/cstmanager/js/script.js:19
+msgid "pre_assigned_only"
+msgstr "Uniquement les cours pré-affectés"
+
+#: cstmanager/static/cstmanager/js/script.js:19
+msgid "percentage"
+msgstr "Pourcentage"
+
+#: cstmanager/static/cstmanager/js/script.js:19
+msgid "time1"
+msgstr "Heure1"
+
+#: cstmanager/static/cstmanager/js/script.js:23
+msgid "AM"
+msgstr "Matin"
+
+#: cstmanager/static/cstmanager/js/script.js:24
+msgid "PM"
+msgstr "Après-midi"
+
+#: cstmanager/static/cstmanager/js/script.js:25
+msgid "fd"
+msgstr "Journée"
+
+#: cstmanager/static/cstmanager/js/script.js:26
+msgid "hd"
+msgstr "Demie-journée"
+
+#: cstmanager/static/cstmanager/js/script.js:27
+msgid "m"
+msgstr "Lundi"
+
+#: cstmanager/static/cstmanager/js/script.js:28
+msgid "tu"
+msgstr "Mardi"
+
+#: cstmanager/static/cstmanager/js/script.js:29
+msgid "w"
+msgstr "Mercredi"
+
+#: cstmanager/static/cstmanager/js/script.js:30
+msgid "th"
+msgstr "Jeudi"
+
+#: cstmanager/static/cstmanager/js/script.js:31
+msgid "f"
+msgstr "Vendredi"
+
+#: cstmanager/static/cstmanager/js/script.js:32
+msgid "sa"
+msgstr "Samedi"
+
+#: cstmanager/static/cstmanager/js/script.js:33
+msgid "su"
+msgstr "Sunday"
+
+#: cstmanager/static/cstmanager/js/script.js:392
+msgid "All changes have been saved."
+msgstr "Tous les changements ont été enregistrés."
+
+#: cstmanager/static/cstmanager/js/script.js:496
+msgid "All groups"
+msgstr "Tous les groupes"
+
+#: cstmanager/static/cstmanager/js/script.js:813
+#: cstmanager/static/cstmanager/js/script.js:830
+#: cstmanager/static/cstmanager/js/script.js:918
+msgid "Strong constraint"
+msgstr "Contrainte forte"
+
+#: cstmanager/static/cstmanager/js/script.js:830
+#: cstmanager/static/cstmanager/js/script.js:920
+msgid "Weight : "
+msgstr "Poids : "
+
+#: cstmanager/static/cstmanager/js/script.js:1418
+#: cstmanager/static/cstmanager/js/script.js:1621
+msgid "Select all"
+msgstr "Tout sélectionner"
+
+#: cstmanager/static/cstmanager/js/script.js:1427
+#: cstmanager/static/cstmanager/js/script.js:1635
+msgid "Remove all"
+msgstr "Tout enlever"
+
+#: cstmanager/static/cstmanager/js/script.js:1436
+#: cstmanager/static/cstmanager/js/script.js:1645
+msgid "Cancel"
+msgstr "Annuler"
+
+#: cstmanager/static/cstmanager/js/script.js:1525
+msgid "Required"
+msgstr "Requis"
+
+#: cstmanager/static/cstmanager/js/script.js:1590
+msgid "Guide tutor"
+msgstr "Accompagnateur·ice"
+
+#: cstmanager/static/cstmanager/js/script.js:1592
+#: cstmanager/static/cstmanager/js/script.js:2077
+msgid "Tutor"
+msgstr "Prof"
+
+#: cstmanager/static/cstmanager/js/script.js:1732
+#: cstmanager/static/cstmanager/js/script.js:1743
+msgid "Strong constraints"
+msgstr "Contraintes fortes"
+
+#: cstmanager/static/cstmanager/js/script.js:1736
+#: cstmanager/static/cstmanager/js/script.js:1745
+msgid "Preferences"
+msgstr "Préférences"
+
+#: cstmanager/static/cstmanager/js/script.js:1754
+#: cstmanager/static/cstmanager/js/script.js:1760
+msgid "All constraints"
+msgstr "Toutes les contraintes"
+
+#: cstmanager/static/cstmanager/js/script.js:1953
+msgid "Edit"
+msgstr "Modifier"
+
+#: cstmanager/static/cstmanager/js/script.js:1954
+msgid "Delete"
+msgstr "Supprimer"
+
+#: cstmanager/static/cstmanager/js/script.js:1955
+msgid "Duplicate"
+msgstr "Dupliquer"
+
+#: cstmanager/static/cstmanager/js/script.js:1997
+msgid "Active"
+msgstr "Active"
+
+#: cstmanager/static/cstmanager/js/script.js:1997
+msgid "Inactive"
+msgstr "Inactive"
+
+#: cstmanager/static/cstmanager/js/script.js:2078
+#: cstmanager/static/cstmanager/js/script.js:2082
+msgid "All tutors"
+msgstr "Tous les profs"
+
+#: people/static/people/student_preferences.js:9
+msgid "Start early in order to end up early"
+msgstr "Commencer tôt pour finir tôt"
+
+#: people/static/people/student_preferences.js:12
+msgid "Do not start late, so as not to end up too late"
+msgstr "Ne pas commencer tard, pour ne pas finir tard"
+
+#: people/static/people/student_preferences.js:15
+#: people/static/people/student_preferences.js:34
+#: people/static/people/student_preferences.js:50
+#: people/static/people/student_preferences.js:63
+msgid "Indifferent"
+msgstr "Indifférent"
+
+#: people/static/people/student_preferences.js:18
+msgid "Do not start early, even if I don't end up early"
+msgstr "Ne pas commencer tôt, même si je dois ne pas finir tôt"
+
+#: people/static/people/student_preferences.js:21
+msgid "Start late, even if I end up late"
+msgstr "Commencer tard, même si je finis tard"
+
+#: people/static/people/student_preferences.js:28
+msgid "Have light days"
+msgstr "Des journées allégées"
+
+#: people/static/people/student_preferences.js:31
+msgid "Have light days more than free half-days"
+msgstr "Des journées allégées plutôt que des demies-journées libres"
+
+#: people/static/people/student_preferences.js:37
+msgid "Have free half-days more than light days."
+msgstr "Des demie-journées libres plutôt que des journées allégées"
+
+#: people/static/people/student_preferences.js:40
+msgid "Have free half-days."
+msgstr "Des demies-journées libres"
+
+#: people/static/people/student_preferences.js:47
+msgid "Avoid holes between courses"
+msgstr "Eviter les trous entre les cours"
+
+#: people/static/people/student_preferences.js:53
+msgid "Promote holes between courses"
+msgstr "Favoriser les trous entre les cours"
+
+#: people/static/people/student_preferences.js:60
+msgid "Eat early"
+msgstr "Manger tôt"
+
+#: people/static/people/student_preferences.js:66
+msgid "Eat late"
+msgstr "Manger tard"
+
+#~ msgid "It's Ok."
+#~ msgstr "C'est parfait"
+
+#~ msgid "No room available (any type)"
+#~ msgstr "Aucune salle disponible (tous types)"
+
+#~ msgid "Room available (any type)"
+#~ msgstr "Salle disponible (tous types)"
+
+#~ msgid "Rooms available (any type)"
+#~ msgstr "Salles disponibles (tous types)"

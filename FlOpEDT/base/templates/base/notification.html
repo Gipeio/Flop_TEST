@@ -1,0 +1,40 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+{% load i18n %}
+
+<fieldset>
+  <legend>Notifications</legend>
+  <form action='{% url "base:user_notifications_pref_changes" department user.username %}'  method='POST' id="form-notifications" >
+    {% csrf_token %}
+    <p style="text-align: center;">{% trans "I wish to be notified of changes for the" %}
+      <input id="user_notifications_pref" type="number" name="user_notifications_pref" style="width: 30px" min="0" max="52"
+             value="{{ user_notifications_pref }}">
+      {%trans "next weeks." %}<br>
+      {% trans "(0 if no notification, 1 for the next 7 days, etc.)" %}
+    </p>
+    <button class="centerbutton" type="submit" name="save_notifications_pref" value="Sauvegarder">
+        {% trans "Save" %}
+    </button>
+      </br>
+  </form>
+</fieldset>

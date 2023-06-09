@@ -1,0 +1,332 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}flop!EDITOR - {{ title }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'flopeditor/lib/bootstrap-material-design/css/bootstrap-material-design.min.css' %}">
+{#    <link rel="stylesheet" href="{% static 'flopeditor/css/flopeditor.css' %}">#}
+{% endblock %}
+
+{% block content %}
+    <body class="{% block body-class %}bg-grey{% endblock %}">
+        {% block body %}
+
+        {% block navbar %}
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+            <a class="navbar-brand" href="{% url 'flopeditor:flopeditor-home' %}">flop!EDITOR</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                  {% if has_any_dept_perm %}
+                    <li class="nav-item {% block nav-classes-tutors %}{% endblock %}">
+                        <a class="nav-link"
+                            href="{% url 'flopeditor:flopeditor-department-tutors' department_abbrev=department.abbrev %}">Intervenants</a>
+                    </li>
+                  {% endif %}
+                    <li class="nav-item {% block nav-classes-rooms %}{% endblock %}">
+                        <a class="nav-link"
+                            href="{% url 'flopeditor:flopeditor-department-rooms' department_abbrev=department.abbrev %}">Salles</a>
+                    </li>
+                    <li class="nav-item {% block nav-classes-groups %}{% endblock %}">
+                        <a class="nav-link"
+                            href="{% url 'flopeditor:flopeditor-department-training-programmes' department_abbrev=department.abbrev %}">Élèves</a>
+                    </li>
+                    <li class="nav-item {% block nav-classes-modules %}{% endblock %}">
+                        <a class="nav-link"
+                            href="{% url 'flopeditor:flopeditor-department-modules' department_abbrev=department.abbrev %}">Modules</a>
+                    </li>
+                     <li class="nav-item {% block nav-classes-course %}{% endblock %}">
+                        <a class="nav-link"
+                            href="{% url 'flopeditor:flopeditor-department-course-types' department_abbrev=department.abbrev %}">Cours</a>
+                    </li>
+                    <li class="nav-item {% block nav-classes-parameters %}{% endblock %}">
+                        <a class="nav-link"
+                            href="{% url 'flopeditor:flopeditor-department-parameters' department_abbrev=department.abbrev %}">Paramètres</a>
+                    </li>
+                </ul>
+                {% if not list_departments %}
+                <span class="navbar-text">Département {{ department.name }}</span>
+                {% else %}
+                <div class="dropdown">
+                  <a class="btn btn-secondary dropdown-toggle text-white border border-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Département {{ department.name }}
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    {% for dept in list_departments %}
+                      <a class="dropdown-item" href="{% url request.resolver_match.view_name department_abbrev=dept.abbrev %}">{{ dept.name }}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endif %}
+                <div class="ml-2">
+                  <a type=button class="btn btn-raised btn-secondary"  href="{% url 'flopeditor:flopeditor-help' %}" title='Aide'> <i class='fas fa-question'></i></a>
+                </div>
+                <div class="ml-2">
+                  <button class="btn btn-raised btn-secondary" data-toggle="modal" data-target="#modal-profil" title='Profil'> <i class='fas fa-user'></i></button>
+                </div>
+              </div>
+        </nav>
+        {% endblock %}
+
+        <div id="main" class="{% block main-class %}container{% endblock %}">
+            {% block content-flopeditor %}
+            {% endblock %}
+        </div>
+
+        {% block footer %}
+        {% endblock %}
+
+        {% block modal %}
+
+        <div class="modal fade text-black" id="modal-profil" tabindex="-1" role="dialog" aria-labelledby="modal-profil" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Votre profil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                  <div class="card container">
+                    <div class="card-body pb-0">
+                      <div class="form-group row">
+                        <div class="col-sm-4  mt-3 " style="border-right: solid 1px grey;">
+                          <div class="form-group row">
+                            <p class="col-sm-12 h6"><u><strong>Statut</strong></u></p>
+                          </div>
+                          <div class="form-group col-form-label">
+                            <label> Statut : {{ status }} </label>
+                          </div>
+                            {% if status_vacataire is not None %}
+                              <div class="form-group col-form-label">
+                                <label>Statut vacataire : {{ status_vacataire }}</label>
+                              </div>
+                              <div class="form-group col-form-label">
+                                <label>Employeur : {{ employer }}</label>
+                              </div>
+                            {% endif %}
+                            {% if status == 'Permanent' %}
+                              <div class="form-group col-form-label">
+                                {% if is_iut == True %}
+                                  <label>Membre de l'iut</label>
+                                {% else %}
+                                  <label>Non membre de l'iut</label>
+                                {% endif %}
+                              </div>
+                            {% endif %}
+                        </div>
+                         <div class="col-sm-8 mt-3">
+                            <div class="form-group row">
+                              <div class="col-sm-12 h6">
+                                <u><strong>Informations</strong></u>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-4 col-form-label">Id</label>
+                              <div class="col-auto col-form-label">
+                                {{ request.user.username }}
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-4 col-form-label">Prénom</label>
+                              <div class="col-auto col-form-label">
+                                {{ request.user.first_name }}
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-4 col-form-label">Nom</label>
+                              <div class="col-auto col-form-label">
+                                {{ request.user.last_name }}
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-sm-4 col-form-label">Email</label>
+                              <div class="col-auto col-form-label">
+                                {{ request.user.email }}
+                              </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-raised btn-info mx-auto mt-4" data-dismiss="modal" data-toggle="modal" data-target="#modal-profil-edit" title='Modifier'>Modifier <i class="fas fa-pencil-alt"></i> </button>
+                            </div>
+
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+
+
+
+
+
+                 <div class="modal fade text-black" id="modal-profil-edit" tabindex="-1" role="dialog" aria-labelledby="modal-profil" aria-hidden="true">
+                   <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title">Votre profil</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                         </button>
+                         </div>
+                           <div class="card container">
+                             <div class="card-body pb-0">
+                               <div class="row">
+
+                                  <form class="col-sm-12" autocomplete="off"  id="form-profil" action="{% url 'flopeditor:flopeditor-ajax-update-profil' %}">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                      <div class="col-sm-4  mt-3 " style="border-right: solid 1px grey;">
+                                        <div class="row">
+                                          <p class="col-sm-12 h6"><u><strong>Statut</strong></u></p>
+                                        </div>
+                                        <div class="row">
+                                          <fieldset class="bmd-form-group">
+                                            <div class="row">
+                                              <input name="oldStatus" class="old_dept_name" value="{{ status }}" hidden>
+                                              <label for="newInputStatus" class="col-sm-12 text-dark">Statut</label>
+                                              <div class="col-sm-12">
+                                                <select name="newInputStatus" class="input-status" onchange="checkVacataireOrFullStaff()" id="newInputStatus">
+                                                  <option value="Permanent" {% if status == "Permanent" %}selected{% endif %}>Permanent</option>
+                                                  <option value="Vacataire"{% if status == "Vacataire" %}selected{% endif %}>Vacataire</option>
+                                                  <option value="Biatos"{% if status == "Biatos" %}selected{% endif %}>Biatos</option>
+                                                </select>
+                                              </div>
+                                            </div>
+                                          </fieldset>
+                                          <fieldset class="bmd-form-group">
+                                            <div class="row" id="statusVacataire">
+                                              <label for="newstatusVacataire" class="bmd-label-static text-dark">Statut vacataire</label>
+                                              <div class="col-sm-8">
+                                                <input name="newstatusVacataire" maxlength="50" autocomplete="off" type="text" class="new_dept_name form-control w-100" id="newStatusVacataire" {% if status_vacataire != None %} value="{{ status_vacataire }}" {% else %}  value="" {% endif %} >
+                                              </div>
+                                            </div>
+                                          </fieldset>
+                                          <fieldset class="bmd-form-group">
+                                            <div class="row" id="employer">
+                                                <label for="newEmployer" class="bmd-label-static text-dark">Employeur</label>
+                                                <div class="col-sm-8">
+                                                  <input name="newEmployer" maxlength="50" type="text" autocomplete="off" class="new_dept_name form-control w-100" id="newEmployer" {% if employer != None %} value="{{ employer }}" {% else %}  value="" {% endif %}>
+                                                </div>
+                                            </div>
+                                          </fieldset>
+
+
+                                          <fieldset class="bmd-form-group">
+                                            <div id="is_iut_checkbox">
+                                                <label for="iut" class="text-dark">membre iut</label>
+                                                <input type="checkbox" name="iut" autocomplete="off" id="iut" {% if is_iut == True %} checked {% endif %}>
+                                            </div>
+                                          </fieldset>
+
+
+                                        </div>
+                                   </div>
+                                   <div class="col-sm-8 mt-3">
+                                       <div class="form-group row">
+                                         <div class="col-sm-12 h6">
+                                           <u><strong>Informations</strong></u>
+                                         </div>
+                                       </div>
+                                       <div class="row">
+                                           <label for="inputIdProfil" class="col-form-label col-sm-4">Id</label>
+                                           <div class="col-sm-8">
+                                               <input name="newIdProfil" maxlength="150" autocomplete="off" type="text" class="new_dept_name form-control w-100  mb-3" id="newIdProfil" value="{{ request.user.username }}" required>
+                                           </div>
+                                       </div>
+                                       <div class="row">
+                                           <label for="inputFirstNameProfil" class="col-form-label col-sm-4">Nom</label>
+                                           <div class="col-sm-8">
+                                               <input name="newFirtNameProfil" maxlength="150" autocomplete="off" type="text" class="new_dept_name form-control w-100 mb-3" id="newFirtNameProfil" value="{{ request.user.first_name }}" required>
+                                           </div>
+                                       </div>
+
+                                       <div class="row">
+                                           <label for="inputLastNameProfil" class="col-form-label col-sm-4">Prénom</label>
+                                           <div class="col-sm-8">
+                                               <input name="newLastNameProfil" maxlength="30" autocomplete="off" type="text" class="new_dept_name form-control w-100 mb-3" id="newSecondNameProfil" value="{{ request.user.last_name }}" required>
+                                           </div>
+                                       </div>
+
+                                       <div class="row">
+                                           <label for="inputEmailProfil" class="col-form-label col-sm-4">Email</label>
+                                           <div class="col-sm-8">
+                                               <input name="newEmailProfil" maxlength="50" autocomplete="off" type="text" class="new_dept_name form-control w-100 mb-3" id="newEmailProfil" value="{{ request.user.email }}" required>
+                                           </div>
+                                       </div>
+
+
+
+
+
+
+                                  </div>
+                                </div>
+                                <div class="col-sm-12 mt-4 text-center">
+                                    <div id="form-message-profil" class="alert mt-4 mr-2 ml-2 mb-3" role="alert"
+                                        style="display:none;border-radius:5px;"></div>
+                                    <button id="validerProfil" type="submit" class="btn btn-raised btn-success mx-auto" >Valider
+                                      <i class="fa fa-check ml-2"></i></button>
+                                    <button id="cancel-profil" class="btn btn-raised btn-info ml-3" data-dismiss="modal" title='Annuler'>Annuler
+                                        <i class="fas fa-pencil-alt ml-2"></i> </button>
+                                </div>
+                              </form>
+                               </div>
+
+                               <!--
+                               <div>
+                                 <button class="btn btn-raised btn-info mx-auto mt-4" data-dismiss="modal" title='Annuler'>Annuler<i class="fas fa-pencil-alt"></i> </button>
+                                 <button class="btn btn-raised btn-info mx-auto mt-4" data-dismiss="modal" title='Valider' id='validerProfil'>Valider</button>
+                               </div>
+                             -->
+                              </div>
+                             </div>
+                            </div>
+                           </div>
+                          </div>
+
+        {% endblock %}
+
+        {% block script %}
+        <script src="https://kit.fontawesome.com/5bf4c39447.js" crossorigin="anonymous"></script>
+        <script src="{% static 'flopeditor/lib/jquery/jquery-3.2.1.min.js' %}" charset="utf-8"></script>
+        <script src="{% static 'flopeditor/lib/popper/popper.js' %}" charset="utf-8"></script>
+        <script src="{% static 'flopeditor/lib/bootstrap-material-design/js/bootstrap-material-design.min.js' %}" charset="utf-8"></script>
+        <script src="{% static 'flopeditor/js/edit-profil.js' %}" charset="utf-8"></script>
+
+        <script>
+            $(document).ready(function() { $('body').bootstrapMaterialDesign(); });
+        </script>
+
+
+        {% endblock %}
+
+        {% endblock %}
+{% endblock %}

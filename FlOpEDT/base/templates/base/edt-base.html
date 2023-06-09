@@ -1,0 +1,144 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "base.html" %}
+
+{% csrf_token %}
+
+{% block title %} EDT {% endblock %}
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'base/better.css' %}?7" />
+<script src="{% static 'base/d3.v4.min.js' %}"></script>
+<script>
+  var groupes_fi = "{% url 'api:groups:structural-tree' %}";
+  var transversal_groupes_fi = "{% url 'api:groups:transversal-list' %}";
+
+  var url_ttconstraint = "{% url 'api:ttapp:constraint-list' %}"
+  var rooms_fi = "{% url 'api:rooms:all-list' %}";
+  var constraints_fi = "{% url 'api:fetch:constraints-list' %}";
+    
+    var url_module = "{% url 'api:course:module-list' %}";
+    var url_tutor = "{% url 'api:people:tutor-list' %}";
+    var url_all_tutors = "{% url 'api:people:tutor_username-list' %}";
+    var url_user_pref = "{% url 'api:user-actual-list' %}";
+    var url_user_pref_default = "{% url 'api:user-def-list' %}";
+
+    var url_bknews = "{% url 'api:extra:bknews-list' %}";
+    var url_quote = "{% url 'api:extra:random-quote-list' %}";
+
+  var url_cours_pp = "{% url 'api:fetch:unscheduledcourses-list' %}";
+
+  var url_weekdays = "{% url 'api:fetch:weekdays-list' %}";
+  
+    var url_contact = "{% url "base:contact" department %}";
+    var url_login = "{% url "people:login" %}";
+    var url_edt = "{% url "base:edt" department %}";
+
+  var url_cours_pl = "{% url 'api:fetch:scheduledcourses-list' %}";
+
+    var url_unavailable_rooms = "{% url 'api:fetch:unavailablerooms-list' %}";
+
+    var url_edt_changes = "{% url "base:edt_changes" department %}";
+    var url_user_pref_changes = "{% url "base:user_pref_changes" department 0 0 '.' %}";
+    url_user_pref_changes = url_user_pref_changes.slice(0, -5);
+
+    var url_week_infos = "{% url 'api:extra:week-infos-list' %}";
+
+    var url_work_copies = "{% url "TTapp:available_work_copies" department 0 0 %}" ;
+    url_work_copies = url_work_copies.slice(0, -3);
+    var url_check_swap = "{% url 'TTapp:check_swap' department 0 0 0 %}" ;
+    url_check_swap = url_check_swap.slice(0, -5) ;
+    var url_delete_work_copy = "{% url 'TTapp:delete_work_copy' department 0 0 0 %}" ;
+    url_delete_work_copy = url_delete_work_copy.slice(0, -5) ;
+    var url_duplicate_work_copy = "{% url 'TTapp:duplicate_work_copy' department 0 0 0 %}" ;
+    url_duplicate_work_copy = url_duplicate_work_copy.slice(0, -5) ;
+    var url_delete_all_unused_work_copies = "{% url 'TTapp:delete_all_unused_work_copies' department 0 0 %}" ;
+    url_delete_all_unused_work_copies = url_delete_all_unused_work_copies.slice(0, -3) ;
+    var url_swap = "{% url 'TTapp:swap' department 0 0 0 %}" ;
+    url_swap = url_swap.slice(0, -5) ;
+    var url_reassign_rooms = "{% url 'TTapp:reassign_rooms' department 0 0 0 %}" ;
+    url_reassign_rooms = url_reassign_rooms.slice(0, -5) ;
+    var url_duplicate_in_other_weeks = "{% url 'TTapp:duplicate_in_other_weeks' department 0 0 0 %}" ;
+    url_duplicate_in_other_weeks = url_duplicate_in_other_weeks.slice(0, -5) ;
+    var url_fetch_extra_sched = "{% url 'api:fetch:extrasched-list' %}" ;
+    {% comment %} url_fetch_extra_sched = url_fetch_extra_sched.slice(0, -3) ; {% endcomment %}
+    var url_fetch_shared_rooms = "{% url 'base:fetch_shared_rooms' department 0 0 %}" ;
+    url_fetch_shared_rooms = url_fetch_shared_rooms.slice(0, -3) ;
+    var url_mail_auto = "{% url "base:email-proposal" department %}";
+    var url_game = "{% url 'easter_egg:start_game' %}" ;
+  var url_colors = "{% url 'displayweb:fetch_colors' department %}" ;
+  var url_group_lunch = "{% url 'TTapp:fetch_group_lunch' department %}" ;
+  var url_fetch_user_preferred_links = "{% url 'people:fetch_user_preferred_links' department %}" ;
+  var url_fetch_group_preferred_links = "{% url 'base:fetch_group_preferred_links' department %}" ;
+  var url_change_preferred_links = "{% url 'base:visio-pref' department %}" ;
+  var url_fetch_physical_presence = "{% url 'people:fetch_physical_presence' department 0 0 %}" ;
+  url_fetch_physical_presence = url_fetch_physical_presence.slice(0, -3) ;
+  var url_change_physical_presence = "{% url 'people:change_physical_presence' 0 0 '.' %}" ;
+  url_change_physical_presence = url_change_physical_presence.slice(0, -5) ;
+
+    var department = "{{ dept }}" ;
+    var week_year_list = {{ all_weeks| safe }};
+    var week_init = +"{{ week }}";
+    var year_init = +"{{ year }}";
+  var department_settings = {{ department_settings | safe }} ;
+  department_settings.mode['visio']=department_settings.mode['visio']=='True'?true:false;
+  department_settings.time.bu = {} ;
+    var days = {{ days | safe }} ;
+  var csrftoken = '{{ csrf_token }}';
+  if(!jQuery.fn.jquery.startsWith("1")){
+      function csrfSafeMethod(method) {
+          // these HTTP methods do not require CSRF protection
+          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+      $.ajaxSetup({
+          beforeSend: function(xhr, settings) {
+              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+          }
+      });
+  }
+</script>
+
+{% block script_variable %}{% endblock %}
+
+<script type='text/javascript' src="{% static 'base/helpers.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'TTapp/side_panel.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/days.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/weeks.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/hours.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/svg.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/variables.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/intervals.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/week_change.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/transformation.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/creation.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/action.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/update.js' %}?2"></script>
+
+{% block script_file %}{% endblock %}
+
+{% endblock %}

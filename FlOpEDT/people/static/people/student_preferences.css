@@ -1,0 +1,40 @@
+#field1{
+	float:left;
+	margin-right:10px;
+}
+
+.twofieldset {
+	width: 47.8%;
+	height: 300px;
+}
+
+#grille {
+	width: 485px;
+	height: 200px;
+}
+
+
+fieldset{
+	border: 5px groove;
+}
+
+legend {
+	font-weight: bold;
+	border-radius: 100px 10px / 120px;
+	box-shadow: 10px 5px 5px rgba(0,0,0,0.4) ;
+	font-size: 14px;
+	background-color: #6E6E6E;
+	color: white;
+	padding: 5px 10px;
+}
+
+.centerbutton{
+	display:block;
+	margin:auto;
+}
+
+.rightbutton{
+	float:right;
+	margin-right: 10px;
+}
+

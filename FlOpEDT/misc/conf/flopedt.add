@@ -1,0 +1,5 @@
+Environment="GUROBI_HOME=/path_to_guro/gurobi801/linux64"
+Environment="PATH=YOUR_PATH:/path_to_guro/gurobi801/linux64/bin"
+Environment="LD_LIBRARY_PATH=/path_to_guro/gurobi801/linux64/lib"
+Environment="GRB_LICENSE_FILE=/path_to_guro_lic/gurobi.lic"
+ExecStartPre=/bin/echo ${GUROBI_HOME} ${PATH}

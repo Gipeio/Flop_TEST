@@ -1,0 +1,61 @@
+{% load static %}
+{% csrf_token %}
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>FlOppy Bird</title>
+    <link rel="stylesheet" href="{% static 'easter_egg/style.css' %}" />
+    <script type='text/javascript' src="{% static 'easter_egg/phaser.js' %}"></script>
+    <script src="{% static 'base/jquery.min.js' %}"></script>
+    <script src="{% static 'base/d3.v4.min.js' %}"></script>
+</head>
+<script>
+  var csrftoken = '{{ csrf_token }}';
+  if(!jQuery.fn.jquery.startsWith("1")){
+      function csrfSafeMethod(method) {
+          // these HTTP methods do not require CSRF protection
+          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+      $.ajaxSetup({
+          beforeSend: function(xhr, settings) {
+              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+          }
+      });
+  }
+</script>
+<body>
+  <table id="easter_egg">
+    <tr>
+      <td>
+        <div id="game"></div>
+      </td>
+      <td>
+        <div id="leaderboard">
+          <h1>TABLEAU DES SCORES</h1>
+          <div class="table">
+            <div class="table-cell">
+              <ul id="list-score">
+                {% for gamescore in score_list %}
+                <li>
+                  <span class="list_num">#{{forloop.counter}}</span>
+                  <h2 align="center" class="score">{{gamescore.user}}</h2>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+<script type="text/javascript">
+  var url_edt = "{% url 'base:edt' department='INFO'%}";
+  var url_fetch_leaderboard = "{% url 'easter_egg:fetch_leaderboard' %}";
+  var url_set_score = "{% url 'easter_egg:set_score' %}";
+  var score_list = {{score_list | safe}} ;
+</script>
+<script type='text/javascript' src="{% static 'easter_egg/script.js' %}"></script>

@@ -1,0 +1,40 @@
+Fonctionnalités testées et approuvées (Vérification du contenu de la BD et/ou Refresh de la page pour s'assurer du fonctionnement de la modification):
+
+    Consulter:
+        - Changement de créneau pour un cours unique: OK
+        - Changement de créneau pour plusieurs cours à la fois: OK
+        - Changement d'enseignant pour un cours donné: OK
+        - Changement d'enseignant pour plusieurs cours: OK
+        - Changement de salle pour un cours: OK
+        - Changement de salle pour plusieurs cours: OK
+        - Changement des disponibilités d'un enseignant: OK
+        - Changement des disponibilités de plusieurs enseignants: OK
+        - Application semaine type à un enseignant: OK
+        - Changement d'horaire ne correspondant pas aux disponibilités de l'enseignant: OK (Affiche bien le bon message d'erreur)
+        - Cumul de salle: OK (Empêche de cumuler les cours dans une seule et même salle)
+        - Cumul de créneaux identiques pour un enseignant: OK (Affichage du bon msg d'erreur)
+
+    Décaler/Annuler:
+        - Mettre un cours en attente: OK
+        - Annuler un cours: OK
+        - Mettre un cours annulé en attente: OK
+        - Mettre un cours en attente dans les cours anulés: OK
+        - Changer la semaine d'un cours: OK
+        - Filtrer par module: OK
+        - Filtrer par Enseignant: OK
+        - Filtrer par groupes: OK (mais regroupe les groupes de 1ère et 2e année)
+        - Combiner les filtres: OK (De plus les filtres s'adaptent toujours en temps réel)
+    
+    Préférences:
+        - Changemnet de dispo pour certaines semaines uniquement: OK
+        - Changement semaine type: OK
+        - Changement nombre d'heures de cours par jour: Aucune erreur visible mais aucun message de confirmation non plus
+        - Changement préférence par sélection "normal": OK
+        - Changement préférence par sélection "sélection": OK
+
+    Statistiques:
+        - Nombre de jours d'innocupation par salle: OK
+        - Mise à jour des stats pour les salles: OK
+        - Nombre de cours donnés par professeur: OK
+        - Mise à jour des stats pour les professeurs: OK
+        

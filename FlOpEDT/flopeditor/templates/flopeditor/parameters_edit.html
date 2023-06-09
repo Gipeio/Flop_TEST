@@ -1,0 +1,164 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "flopeditor/parameters.html" %}
+{% load static %}
+
+{% block parameters_content %}
+<form id="form-parameters" class="mb-0"
+action="{% url 'flopeditor:flopeditor-ajax-edit-department-parameters' department_abbrev=department.abbrev %}">
+{% csrf_token %}
+<div class="form-group row mb-0">
+    <div class="col-sm-6  mt-3 pl-4" style="border-right: solid 1px grey;">
+        <div class="form-group">
+            <p class="h6"><u><strong>Jours ouvrables</strong></u></p>
+        </div>
+        <div class="form-group form-check mt-4">
+            <input type="checkbox" class="form-check-input" id="check1" name="days"
+                value="{{ day_choices.0.0 }}"
+                {% if day_choices.0.0 in days %}checked{% endif %}>
+            <label class="form-check-label" for="check1">Lundi</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check2" name="days"
+                value="{{ day_choices.1.0 }}"
+                {% if day_choices.1.0 in days %}checked{% endif %}>
+            <label class="form-check-label" for="check2">Mardi</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check3" name="days"
+                value="{{ day_choices.2.0 }}"
+                {% if day_choices.2.0 in days %}checked{% endif %}>
+            <label class="form-check-label" for="check3">Mercredi</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check4" name="days"
+                value="{{ day_choices.3.0 }}"
+                {% if day_choices.3.0 in days %}checked{% endif %}>
+            <label class="form-check-label" for="check4">Jeudi</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check5" name="days"
+                value="{{ day_choices.4.0 }}"
+                {% if day_choices.4.0 in days %}checked{% endif %}>
+            <label class="form-check-label" for="check5">Vendredi</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check6" name="days"
+                value="{{ day_choices.5.0 }}"
+                {% if day_choices.5.0 in days %}checked{% endif %}>
+            <label class="form-check-label" for="check6">Samedi</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check7" name="days"
+                value="{{ day_choices.6.0 }}"
+                {% if day_choices.6.0 in days %}checked{% endif %}>
+            <label class="form-check-label" for="check7">Dimanche</label>
+        </div>
+
+    </div>
+    <div class="col-sm-6 mt-3">
+        <div class="form-group ">
+            <p class="h6"><u><strong>Horaires de fonctionnement</strong></u></p>
+        </div>
+        <label for="input1" class="col-auto pl-0 mb-0 text-muted">Début des cours</label>
+        <div class="form-group row pt-0">
+            <div class="col-auto">
+                <input type="time" class="form-control pt-0" id="day_start_time"
+                    name="day_start_time" value="{{ day_start_time }}">
+            </div>
+        </div>
+
+        <label for="input2" class="col-auto pl-0 mb-0 text-muted">Fin des cours</label>
+        <div class="form-group row pt-0">
+            <div class="col-auto">
+                <input type="time" class="form-control pt-0" id="day_finish_time"
+                    name="day_finish_time" value="{{ day_finish_time }}">
+            </div>
+        </div>
+
+        <label for="input3" class="col-auto pl-0 mb-0 text-muted">Début de la pause
+            déjeuner</label>
+        <div class="form-group row pt-0">
+            <div class="col-auto">
+                <input type="time" class="form-control pt-0"
+                    value="{{ lunch_break_start_time }}" name="lunch_break_start_time"
+                    id="lunch_break_start_time">
+            </div>
+        </div>
+
+        <label for="input4" class="col-auto pl-0 mb-0 text-muted">Fin de la pause
+            déjeuner</label>
+        <div class="form-group row pt-0">
+            <div class="col-auto">
+                <input type="time" class="form-control pt-0"
+                    value="{{lunch_break_finish_time}}" name="lunch_break_finish_time"
+                    id="lunch_break_finish_time">
+            </div>
+        </div>
+
+        <label for="input5" class="col-auto pl-0 mb-0 text-muted">Durée par défaut d'un
+            cours</label>
+        <div class="form-group row pt-0">
+            <div class="col-auto">
+                <input type="time" class="form-control pt-0"
+                    value="{{ default_preference_duration }}"
+                    name="default_preference_duration" id="default_preference_duration">
+            </div>
+        </div>
+        <div class="form-group ">
+            <p class="h6"><u><strong>Modes</strong></u></p>
+        </div>
+        <label for="visio_mode" class="col-auto pl-0 mb-0 text-muted">Visio</label>
+        <select name="visio_mode" id="visio_mode" >
+           <option value="True">Oui</option>
+           <option value="False"{% if not mode.visio %} selected{% endif %}>Non</option>
+        </select>
+        <label for="cosmo_mode" class="col-auto pl-0 mb-0 text-muted">Cosmo</label>
+        <select name="cosmo_mode" id="cosmo_mode" >
+            {% for x, y in mode.cosmo_choices %}
+                <option value="{{ x }}"{% if mode.cosmo == x %} selected{% endif %}>{{ y }}</option>
+            {% endfor %}
+        </select>
+
+    </div>
+
+
+    <div class="col-sm-12 mt-4 text-center">
+        <div id="form-message" class="alert mt-4 mr-2 ml-2 mb-3" role="alert"
+            style="display:none;border-radius:5px;"></div>
+        <button id="button-submit" type="submit" class="btn btn-raised btn-success mr-3">Valider <i
+                class="fa fa-check"></i></button>
+        <a id="button-cancel" href="{% url 'flopeditor:flopeditor-department-parameters' department_abbrev=department.abbrev %}" class="btn btn-raised btn-danger">Annuler <i
+                class="fa fa-times"></i></a>
+    </div>
+</div>
+
+</form>
+{% endblock %}
+
+{% block script %}
+{{ block.super }}
+<script> const parametersUrl = "{% url 'flopeditor:flopeditor-department-parameters' department_abbrev=department.abbrev %}"; </script>
+<script src="{% static 'flopeditor/js/edit-parameters.js' %}" charset="utf-8"></script>
+{% endblock %}

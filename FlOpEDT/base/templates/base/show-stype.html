@@ -1,0 +1,197 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "base.html" %}
+
+{% load i18n %}
+{% csrf_token %}
+
+
+
+{% block title %} EDT {% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'base/better.css' %}"/>
+  <script src="{% static 'base/d3.v4.min.js' %}"></script>
+  <!-- script src="https://d3js.org/d3.v4.min.js"></script -->
+  <script>
+    var url_user_pref_default = "{% url 'api:user-def-list' %}";
+    var url_fetch_course_dweek = "{% url 'api:fetch:coursedefweek-list' %}";
+    var url_fetch_room_dweek = "{% url 'api:room-def-list' %}";
+    
+    var url_user_pref_changes = "{% url 'base:user_pref_changes' department 0 0 '.' %}";
+    url_user_pref_changes = url_user_pref_changes.slice(0, -5);
+
+    var url_course_pref_changes = "{% url 'base:course_pref_changes' department 0 0 '.' '.' %}";
+    url_course_pref_changes = url_course_pref_changes.slice(0, -7);
+
+    var url_room_pref_changes = "{% url 'base:room_pref_changes' department 0 0 '.' %}";
+    url_room_pref_changes = url_room_pref_changes.slice(0, -5);
+
+    var url_course_types = "{% url 'api:course:type-name-list' %}";
+    var url_training_programmes = "{% url 'api:base:trainingprogramme-name-list' %}";
+    var url_all_tutors = "{% url 'api:people:tutor_username-list' %}";
+    var url_rooms = "{% url 'base:fetch_flat_rooms' department %}";
+
+    var url_fetch_perfect_day = "{% url 'base:fetch_perfect_day' department '.' %}";
+    url_fetch_perfect_day = url_fetch_perfect_day.slice(0, -1);
+
+    var department = "{{department}}" ;
+    
+    var logged_usr = {name:"{{ name_usr }}", rights: -1};
+    var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+    var url_login = "{% url 'people:login' %}";
+    var current_year = "{{ current_year }}" ;
+  var department_settings = {{ department_settings | safe }} ;
+  let k_dept_mode = Object.keys(department_settings.mode) ;
+  for(let i = 0 ; i < k_dept_mode.length ; i ++ ) {
+    department_settings.mode[k_dept_mode[i]]=department_settings.mode[k_dept_mode[i]]=='True'?true:false;
+  }
+  department_settings.time.bu = {} ;
+    var days = {{ days | safe }} ;
+    var csrftoken = '{{ csrf_token }}';
+
+  if(!jQuery.fn.jquery.startsWith("1")){
+      function csrfSafeMethod(method) {
+          // these HTTP methods do not require CSRF protection
+          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+      $.ajaxSetup({
+          beforeSend: function(xhr, settings) {
+              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+          }
+      });
+  }
+  </script>
+<body>
+<div  id="tools-main" style="width: 100%; overflow: hidden;">
+  <div id="svg" style="float: left; margin: auto 40px 20px auto;"></div>
+    <div style="margin: 100px;">
+        <form style="white-space: nowrap;" name="app" action="javascript:apply_stype_from_button(false)" id="form-nweek">
+            </br>
+            <fieldset>
+                <legend>{% trans "Weeks" %}</legend>
+                <p>{% trans "Set default week" %}<p/>
+                {% trans "from week" %}
+                <input type="number" name="week_st" style="width: 40px" value="{{ date_deb.semaine }}" min="1" max="53">, {% trans "year" %}
+                <input type="number" name="year_st" style="width: 60px" value="{{ date_deb.an }}" min="{{current_year}}" max="{{current_year|add:"1"}}"></br>
+                {% trans "until week" %}
+                <input type="number" name="week_end" style="width: 40px" value="{{ date_fin.semaine }}" min="1" max="53">, {% trans "year" %}
+                <input type="number" name="year_end" style="width: 60px" value="{{ date_fin.an }}" min="{{current_year}}" max="{{current_year|add:"1"}}"></br></br>
+                <input type="submit" name="apply" value="{% trans "button_apply" %}">
+            </fieldset>
+            </br></br>
+        </form>
+        <fieldset>
+            <legend>{% trans "Default week" %}</legend>
+            <form style="white-space: nowrap;" name="sav"  action="javascript:apply_stype_from_button(true)" id="form-dweek">
+                {% trans "Update my default week" %}<br/>
+                <br/>
+                <input type="submit" name="save" value="{% trans "button_save" %}"></br>
+            </form>
+        </fieldset>
+        <br/><br/>
+        <span id="ack"></span>
+    </div>
+</div>
+<div class='stype-container'>
+  <fieldset>
+    <legend>{% trans "My videoconf links" %}</legend>
+    <p>{% trans "Create a link" %}</p>
+    <br/>
+    <button onclick="window.location.href = '{% url 'base:visio-pref' department %}';">{% trans "button_change" %}</button>
+  </fieldset>
+  <fieldset>
+    <legend>{% trans "My ideal day" %}</legend>
+    <form action='{% url "base:user_perfect_day_changes" department user.username %}'  method='POST' id="form-perfect_day" >
+        {% csrf_token %}
+        <p style="text-align: center;">{% trans "This is the total number of teaching hours I would like to give every teaching day:" %} <br>
+            {% trans "Minimum" %} <input id="user_min_hours_per_day" type="number" name="user_min_hours" style="width: 30px" min="0" max="12" value="{{ usr_min_hours }}">
+            &nbsp;&nbsp;{% trans "Preferred" %} <input id="user_pref_hours_per_day" type="number" name="user_pref_hours" style="width: 30px" min="1" max="12" value="{{ usr_pref_hours }}">
+            &nbsp;&nbsp;{% trans "Maximum" %} <input id="user_max_hours_per_day" type="number" name="user_max_hours" style="width: 30px" min="1" max="12" value="{{ usr_max_hours }}">
+        <br>
+        </p>
+        <input type="submit" name="save_perfect_day" value="{% trans "button_save" %}">
+    </form>
+  </fieldset>
+  <br/>
+  <br/>
+  {% include 'base/notification.html' %}
+  {#inlcude the view to select a theme#}
+  {% include 'base/themes.html' %}
+  <fieldset>
+    <legend>{% trans "My favorite rooms" %}</legend>
+    <p>{% trans "Select my favorite rooms" %}</p>
+    <br/>
+    <button onclick="window.location.href = '{% url 'base:room-pref' department %}';">{% trans "button_change" %}</button>
+  </fieldset>
+</div>
+</body>
+<script type='text/javascript' src="{% static 'base/helpers.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/days.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/weeks.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/hours.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/svg.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/intervals.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/week_change.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/transformation.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/creation.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/action.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/update.js' %}?2"></script>
+<script type='text/javascript' src="{% static 'base/variables.js' %}?3"></script>
+<script type='text/javascript' src="{% static 'base/stype.js' %}"></script>
+<script type='text/javascript' src="{% static 'base/stype_side_panel.js' %}"></script>
+
+{% endblock %}
+
+{% block side_panel %}
+<div>
+  <p onclick="show_tutors()" class="btn_panel">{% trans "Teachers" %}</p>
+  <p id="sp_tutor">{% trans "Transformation in : " %}
+    <select id="dd_tutors">
+    </select>
+  </p>
+</div>
+<div>
+  <p onclick="show_course_types()" class="btn_panel">{% trans "Types of classes" %}</p>
+  <div id="sp_course_type">
+    <p> Promo :
+      <select id="dd_programmes">
+      </select>
+    </p>
+    <p> {% trans "Types of classes" %}
+      <select id="dd_course_types">
+      </select>
+    </p>
+  </div>
+</div>
+<div>
+  <p onclick="show_rooms()" class="btn_panel">{% trans "Rooms" %}</p>
+  <p id="sp_room">{% trans "Transformation in : " %} 
+    <select id="dd_rooms">
+    </select>
+  </p>
+</div>
+{% endblock %}

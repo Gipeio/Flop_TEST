@@ -1,0 +1,17 @@
+[Unit]
+Description=FlopEdt
+After=network.target
+
+[Service]
+PIDFile=/run/daphne/pid
+User=flop
+Group=flop
+WorkingDirectory=path_to_where_manage_belongs_to
+ExecStart=/home/flop/flop/FlOpEDT/venv/bin/daphne -b 127.0.0.1 -p 8000 --verbosity 3 --access-log=/tmp/flop.log FlOpEDT.asgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+Restart=on-abort
+Environment="DJANGO_LOG_LEVEL=DEBUG"
+
+[Install]
+WantedBy=multi-user.target

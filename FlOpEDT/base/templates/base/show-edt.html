@@ -1,0 +1,78 @@
+<!-- This file is part of the FlOpEDT/FlOpScheduler project.               -->
+<!-- Copyright (c) 2017                                                    -->
+<!-- Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.           -->
+<!--                                                                       -->
+<!-- This program is free software: you can redistribute it and/or modify  -->
+<!-- it under the terms of the GNU Affero General Public License as        -->
+<!-- published by the Free Software Foundation, either version 3 of the    -->
+<!-- License, or (at your option) any later version.                       -->
+<!--                                                                       -->
+<!-- This program is distributed in the hope that it will be useful, but   -->
+<!-- WITHOUT ANY WARRANTY; without even the implied warranty of            -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      -->
+<!-- Affero General Public License for more details.                       -->
+<!--                                                                       -->
+<!-- You should have received a copy of the GNU Affero General Public      -->
+<!-- License along with this program. If not, see                          -->
+<!-- <http://www.gnu.org/licenses/>.                                       -->
+<!--                                                                       -->
+<!-- You can be released from the requirements of the license by purchasing -->
+<!-- a commercial license. Buying such a license is mandatory as soon as   -->
+<!-- you develop activities involving the FlOpEDT/FlOpScheduler software   -->
+<!-- without disclosing the source code of your own applications.          -->
+
+{% extends "base/edt-base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block script_variable %}
+<script>
+  var promo_init = "{{ promo }}";
+  var gp_init = "{{ gp }}";
+  var num_copie = +"{{ copie }}";
+  var logged_usr = { name: "{{ name_usr }}", rights: +"{{ rights_usr }}", is_student: "{{ user.is_student }}" };
+  var splash_id = "{{ splash_id }}";
+</script>
+{% endblock %}
+
+{% block script_file %}
+<script type='text/javascript' src="{% static 'base/all.js' %}?2"></script>
+{% endblock %}
+
+{% block side_panel %}
+    <p>Numéro de copie :
+      <select id="dd_work_copy">
+      </select>
+    </p>
+    <p onclick="check_swap_with_copy_0()" class="btn_panel">
+      {% trans "Check election" %}
+    </p>
+    <p id="ack-check-swap"></p>
+    <p onclick="swap_with_copy_0()" class="btn_panel">
+      {% trans "Elect this copy" %}
+    </p>
+    <p id="ack-swap"></p>
+    <p onclick="duplicate_work_copy()" class="btn_panel">
+        {% trans "Duplicate this copy" %}
+    </p>
+    <p id="ack-duplicate"></p>
+    <p onclick="delete_work_copy()" class="btn_panel">
+      {% trans "Delete this copy" %}
+    </p>
+    <p id="ack-delete"></p>
+    <p onclick="delete_all_unused_work_copies()" class="btn_panel">
+        {% trans "Delete all copies except the 0" %}
+    </p>
+    <p id="ack-delete_all_unused"></p>
+    <p onclick="reassign_rooms()" class="btn_panel">
+        {% trans "Reassign rooms" %}
+    </p>
+    <p id="ack-reassign_rooms"></p>
+    <p onclick="duplicate_in_other_weeks()" class="btn_panel">
+        {% trans "Duplicate (what can be) in other weeks" %}
+    </p>
+    <p id="ack-duplicate_in_other_weeks"></p>
+
+
+{% endblock%}

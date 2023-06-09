@@ -1,0 +1,83 @@
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  padding-left: 10px;
+  display: none;
+}
+
+.sidebar .btn_panel {
+  display: block;
+  padding: 8px 8px 8px 0px;
+  font-size: 25px;
+  color: #818181;
+  transition: 0.3s;
+}
+
+.sidebar p {
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.sidebar select {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar .btn_panel:hover {
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  margin-left: 50px;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sideBarForm {
+  background-color: #999;
+}
+
+.sideBarForm input{
+  background-color: #FFF;
+  border: 0 ;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}

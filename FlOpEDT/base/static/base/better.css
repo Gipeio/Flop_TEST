@@ -1,0 +1,217 @@
+/* This file is part of the FlOpEDT/FlOpScheduler project.                  */
+/* Copyright (c) 2017                                                       */
+/* Authors: Iulian Ober, Paul Renaud-Goud, Pablo Seban, et al.              */
+/*                                                                          */
+/* This program is free software: you can redistribute it and/or modify     */
+/* it under the terms of the GNU Affero General Public License as           */
+/* published by the Free Software Foundation, either version 3 of the       */
+/* License, or (at your option) any later version.                          */
+/*                                                                          */
+/* This program is distributed in the hope that it will be useful, but      */
+/* WITHOUT ANY WARRANTY; without even the implied warranty of               */
+/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU         */
+/* Affero General Public License for more details.                          */
+/*                                                                          */
+/* You should have received a copy of the GNU Affero General Public         */
+/* License along with this program. If not, see                             */
+/* <http://www.gnu.org/licenses/>.                                          */
+/*                                                                          */
+/* You can be released from the requirements of the license by purchasing   */
+/* a commercial license. Buying such a license is mandatory as soon as      */
+/* you develop activities involving the FlOpEDT/FlOpScheduler software      */
+/* without disclosing the source code of your own applications.             */
+
+/* ************ grille EdT ************ */
+.rbg {
+  stroke: none;
+  fill: white;
+}
+.day_am{
+    stroke:black;
+    stroke-width: 2;
+    fill: none;
+}
+.day_pm{
+    stroke:black;
+    stroke-width: 2;
+    fill: none;
+}
+/* jours de la semaine */
+.txt_scl {
+/*    fill:darkslateblue;*/
+    font-size:20px;
+    font-weight:bold;
+}
+/* groupes */
+.gridscg, .gridscp {
+  font-size:13px;
+  font-weight:bold;
+}
+/* creneau horaire */
+.gridsckh {
+    font-size:13px;
+    font-weight:normal;
+    text-anchor:end;
+}
+.gridsckhl, .gridsckhlam, .gridsckhlpm  {
+    stroke:black;
+    stroke-width: 2;
+}
+
+/* ************ Boutons ************ */
+#dd-sal, #dd-mod {
+background-color:forestgreen;
+color:white;
+}
+.sel-button {
+  cursor: pointer;
+}
+rect.select-standard { /*tutor-button-others {*/
+  stroke:black;
+  stroke-width:1px;
+  fill:forestgreen;
+}
+rect.select-highlight { /*tutor-button-me { */
+  stroke:#134e13;
+  stroke-width:2px;
+  fill:#31c831;
+}
+text.select-standard {
+  fill:white;
+}
+text.select-highlight {
+  fill:black;
+}
+/* popup title */
+.popup-title {
+  font-size:16px;
+  font-weight:bold;
+}
+.sel-pop-bg, .sel-pop-exit {
+    fill:#dddddd;
+}
+
+g[class^="gp-but-"] {
+  cursor: pointer;
+}
+
+/* .dispo { */
+/*     cursor: pointer; */
+/* } */
+
+.cir_wk {
+  fill: darkgreen;
+  cursor: pointer;
+  font-size: 2em;
+  font-weight: bold
+}
+
+.rec_wk {
+  fill: darkgreen;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.sel_wk {
+  fill: none;
+  stroke: darkkhaki;
+  stroke-width: 4
+}
+
+.menu {
+    fill: aliceblue;
+    stroke: none;
+}
+
+.ckstat {
+    fill: aliceblue
+}
+
+#layout-meg {
+    font-size: 14px
+}
+#layout-wg {
+    font-size: 14px
+}
+#layout-catg {
+    font-size: 12px
+}
+#layout-dg {
+    font-size: 12px
+}
+#layout-cmtg {
+    font-size: 12px
+}
+#layout-dig {
+    font-size: 12px
+}
+
+.menu-btn {
+    font-size: 14px;
+}
+
+
+[class^=spl_] {
+    font-size:18px
+}
+
+.bn-all {
+    font-size:12px
+}
+
+.sel-button{
+    font-size:12px
+}
+.sel-pop-g{
+    font-size:12px
+}
+
+/* .ckdyna { */
+/*     cursor: pointer; */
+/* } */
+
+/* Messages */
+.ack-edt, .ack-reg {
+  font-size:10px;
+}
+.ack-reg {
+  text-anchor:end;
+}
+.quote {
+  text-anchor:start;
+}
+legend {
+    color: #383838;
+}
+
+.stype-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.grids {
+    stroke-dasharray: 2, 2;
+    stroke-width: 2;
+    stroke-linecap: "round";
+    fill-opacity: .5;
+}
+
+
+/* loadingspin.svg */
+
+/* ************ Logo ************ */
+/*@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot'); // IE9 Compat Modes
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+       url('webfont.woff2') format('woff2'), // Super Modern Browsers
+       url('webfont.woff') format('woff'), // Pretty Modern Browsers
+       url('webfont.ttf')  format('truetype'), // Safari, Android, iOS
+       url('webfont.svg#svgFontName') format('svg'); // Legacy iOS
+}*/
+
+.gridsckhft {
+    font-size:12px;
+}
