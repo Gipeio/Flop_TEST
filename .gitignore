@@ -26,3 +26,4 @@ FlOpEDT/static/vue/dist/*.hot-update.js*
 #Catalog
 FlOpEDT/discarded.json
 FlOpEDT/temp/*
+FlOpEDT/FlOpEDT/settings/local.py
