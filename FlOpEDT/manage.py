@@ -26,10 +26,20 @@
 import os
 import sys
 
+def run_api_tests():
+    import pytest
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    api_tests_dir = os.path.join(current_dir, 'api', 'tests')
+    sys.exit(pytest.main([api_tests_dir]))
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "FlOpEDT.settings.local")
     try:
-        from django.core.management import execute_from_command_line
+        if len(sys.argv) > 1 and sys.argv[1] == 'test':
+            run_api_tests()
+        else:
+            from django.core.management import execute_from_command_line
+            execute_from_command_line(sys.argv)
     except ImportError:
         # The above import may fail for some other reason. Ensure that the
         # issue is really that Django is missing to avoid masking other
@@ -43,4 +53,4 @@ if __name__ == "__main__":
                 "forget to activate a virtual environment?"
             )
         raise
-    execute_from_command_line(sys.argv)
+    #execute_from_command_line(sys.argv)
