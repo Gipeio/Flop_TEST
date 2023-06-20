@@ -42,4 +42,5 @@ Voir [la documentation dédiée](./FlOpEDT/api/README.md)
 - [Discuter](https://framateam.org/flopedt/)
 - [Soulever une issue](https://framagit.org/FlOpEDT/FlOpEDT/issues)
 
-
+## Tests API
+utiliser la commande FLOP_CONFIG_FILE=../config_file/flopedt.ini python3.11 manage.py test
