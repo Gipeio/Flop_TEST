@@ -43,4 +43,15 @@ Voir [la documentation dédiée](./FlOpEDT/api/README.md)
 - [Soulever une issue](https://framagit.org/FlOpEDT/FlOpEDT/issues)
 
 ## Tests API
-utiliser la commande FLOP_CONFIG_FILE=../config_file/flopedt.ini python3.11 manage.py test
+utiliser cette commande sur la racine du projet:
+```cmd
+source venv/bin/activate
+```
+puis:
+```cmd
+cd FlOpEDT
+```
+et enfin pour lancer tout les tests:
+```cmd
+FLOP_CONFIG_FILE=../config_file/flopedt.ini python3.11 manage.py test
+```
